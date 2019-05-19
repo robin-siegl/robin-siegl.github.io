@@ -3,6 +3,7 @@
 	margin: 0px;
 	padding: 0px;
 	color: #212121;
+	box-sizing: border-box;
 }
 
 body {
@@ -73,4 +74,11 @@ main {
 main section {
 	max-width: 500px;
 	margin: 0px auto;
+}
+#landing-container {
+	width: 100%;
+	text-align: center;
+	padding: 100px;
+	/*background: url("https://picsum.photos/id/465/4928/3264");
+	background-position: center;*/
 }
