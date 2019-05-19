@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1">
+	
+	<meta name="description" content="Hello World! :)"></meta>
+	<meta name="keywords" content="hello,world,test,developrs"></meta>
+	<title>Trivia Game - Test your friends!</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="css/style.css?version=1.0.2" type="text/css" rel="stylesheet"></link>
+
+</head>
+<body>
+	<header>
+		<h1>Trivia Game | <span id="title">Welcome</span></h1>
+	</header>
+	<main>
+		<div id="answers-container" class="display-none">
+			<h2 id="question">Is this a sample question?</h2>
+			<hr>
+			<div id="answers">
+				<ol id="list">
+					<li id="optionA" onclick="optionA()">Option A</li>
+					<li id="optionB" onclick="optionB()">Option B</li>
+					<li id="optionC" onclick="optionC()">Option C</li>
+					<li id="optionD" onclick="optionD()">Option D</li>
+				</ol>
+			</div>
+		</div>
+		<div id="info-container" class="display-none">
+		</div>
+		<div id="start-container">
+			<h2>Welcome</h2>
+			<hr>
+			<p>To start the Game, press play.</p>
+			<div id="play" onclick="initialSetup()">PLAY</div>
+		</div>
+	</main>
+<!-- Main Javascript -->
+<script src="app.js"></script>
+</body>
+</html>

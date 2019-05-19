@@ -1,0 +1,95 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	
+	font-family: 'Open Sans', arial;
+	color: white;
+}
+
+body {
+	background-color: black;
+	box-sizing: border-box;
+}
+
+@keyframes rotating {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(359deg);
+	}
+}
+
+@media screen and (orientation: landscape) {
+
+main {
+	width: 70vh;
+	height: 70vh;
+	text-align: center;
+	margin: 10vh auto;
+}
+h1 {
+	margin: 25vh 0px;
+}
+#circle {
+	z-index: 1;
+	width: 70vh;
+	height: 70vh;
+	border-radius: 100%;
+	background-image:	radial-gradient(circle, transparent 65%, black 75%),
+						radial-gradient(circle, transparent 65%, black 85%),
+						radial-gradient(circle, black, transparent 80%),
+						radial-gradient(circle, black, transparent 90%),
+						radial-gradient(circle at top, dodgerblue, transparent 98%),
+						radial-gradient(circle at bottom, hotpink, transparent 98%);
+	position: fixed;
+	animation: rotating 5s infinite ease-in-out;
+}
+#circle-dark {
+	z-index: 2;
+	margin: 5vh;
+	width: 60vh;
+	height: 60vh;
+	border-radius: 100%;
+	background-color: black;
+	position: fixed;
+}
+
+}
+
+@media screen and (orientation: portrait) {
+
+main {
+	width: 70vw;
+	height: 70vw;
+	text-align: center;
+	margin: 10vw auto;
+}
+h1 {
+	margin: 25vw 0px;
+}
+#circle {
+	z-index: 1;
+	width: 70vw;
+	height: 70vw;
+	border-radius: 100%;
+	background-image:	radial-gradient(circle, transparent 65%, black 75%),
+						radial-gradient(circle, transparent 65%, black 85%),
+						radial-gradient(circle, black, transparent 80%),
+						radial-gradient(circle, black, transparent 90%),
+						radial-gradient(circle at top, dodgerblue, transparent 98%),
+						radial-gradient(circle at bottom, hotpink, transparent 98%);
+	position: fixed;
+	animation: rotating 5s infinite ease-in-out;
+}
+#circle-dark {
+	z-index: 2;
+	margin: 5vw;
+	width: 60vw;
+	height: 60vw;
+	border-radius: 100%;
+	background-color: black;
+	position: fixed;
+}
+
+}
