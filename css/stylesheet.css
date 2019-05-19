@@ -2,6 +2,11 @@
 	font-family: "IBM Plex Sans", Sans-Serif;
 	margin: 0px;
 	padding: 0px;
+	color: #212121;
+}
+
+body {
+	background-color: #fafafa;
 }
 
 h1 {
@@ -34,7 +39,8 @@ header div {
 	display: flex;
 	justify-content: space-between;
 	align-content: space-around;
-	flex-flow: row;
+	flex-flow: column;
+	text-align: center;
 }
 nav ul {
 	display: flex;
@@ -42,10 +48,15 @@ nav ul {
 	align-content: space-around;
 	flex-flow: row;
 	list-style-type: none;
+	margin: 20px 0px;
 }
-nav ul li {
-	padding: 15px;
-	margin: 0px 10px;
+nav ul li a {
+	padding: 20px;
+	margin: 0px 5px;
+	background-color: #212121;
+	color: #fafafa;
+	text-decoration: none;
+	border-radius: 10px;
 }
 
 /*
