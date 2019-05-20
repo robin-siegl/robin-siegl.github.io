@@ -150,10 +150,21 @@ section div {
 	text-decoration: none;
 }
 
+@media screen and (min-width: 600px) {
+
+	header div {
+		justify-content: space-between;
+		align-content: space-between;
+		flex-flow: row;
+		text-align: left;
+	}
+
+}
 
 @media screen and (min-width: 1000px) {
 
 	#landing-container {
 		height: 1000px;
 	}
+
 }
