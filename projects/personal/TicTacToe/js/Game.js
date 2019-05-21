@@ -12,7 +12,7 @@ class Game {
     player1Menu.children[2].innerHTML = "Your Turn";
     player2.isActive = false;
     player2Menu.children[2].style.backgroundColor = "#ebebeb";
-    player2Menu.children[2].innerHTML = "Your Turn";
+    player2Menu.children[2].innerHTML = "Wait";
     
     setBoardSpacesToDefault();
   }
