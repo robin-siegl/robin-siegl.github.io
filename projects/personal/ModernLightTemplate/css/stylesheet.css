@@ -133,6 +133,7 @@ section div {
 }
 section div h1 {
 	transition: 1s;
+	border-left: 0px solid #228984;
 }
 .on-scroll-active div h1 {
 	transition: 1s;
