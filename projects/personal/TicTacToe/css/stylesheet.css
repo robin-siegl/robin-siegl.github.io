@@ -76,9 +76,11 @@ Board Game Design
 .cell img {
 	margin: 15px auto;
 }
+
 .cell-border-full {
 	border: 2px solid #212121;
 }
+
 .cell-border-left-bottom {
 	border: 2px solid #fafafa;
 	border-bottom: 2px solid #212121;
@@ -89,6 +91,7 @@ Board Game Design
 	border-top: 2px solid #212121;
 	border-left: 2px solid #212121;
 }
+
 .cell-border-top-right-bottom {
 	border: 2px solid #fafafa;
 	border-top: 2px solid #212121;
@@ -101,7 +104,8 @@ Board Game Design
 	border-left: 2px solid #212121;
 	border-bottom: 2px solid #212121;
 }
-.cell-border-right-top-right {
+
+.cell-border-left-top-right {
 	border: 2px solid #fafafa;
 	border-bottom: 2px solid #212121;
 	border-right: 2px solid #212121;
@@ -113,6 +117,7 @@ Board Game Design
 	border-left: 2px solid #212121;
 	border-right: 2px solid #212121;
 }
+
 .cell-border-right-bottom {
 	border: 2px solid #fafafa;
 	border-bottom: 2px solid #212121;
