@@ -165,6 +165,7 @@ Controls Container
 	list-style-type: none;
 	flex-flow: column;
 	margin: 0px auto;
+	max-width: 300px;
 }
 #controls-container a {
 	margin: 5px;
