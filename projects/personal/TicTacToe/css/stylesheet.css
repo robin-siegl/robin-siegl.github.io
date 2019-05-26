@@ -55,7 +55,6 @@ Board Game Design
 
 #board-container {
 	margin: 25px auto;
-	border: 2px solid #212121;
 	max-width: 300px;
 }
 .row {
