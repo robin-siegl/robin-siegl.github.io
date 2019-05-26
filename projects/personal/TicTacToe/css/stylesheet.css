@@ -77,6 +77,38 @@ Board Game Design
 .cell img {
 	margin: 15px auto;
 }
+.cell-border-left-bottom {
+	border: 2px solid #fafafa;
+	border-bottom: 2px solid #212121;
+	border-left: 2px solid #212121;
+}
+.cell-border-left-top {
+	border: 2px solid #fafafa;
+	border-top: 2px solid #212121;
+	border-left: 2px solid #212121;
+}
+.cell-border-top-right-bottom {
+	border: 2px solid #fafafa;
+	border-top: 2px solid #212121;
+	border-right: 2px solid #212121;
+	border-bottom: 2px solid #212121;
+}
+.cell-border-top-left-bottom {
+	border: 2px solid #fafafa;
+	border-top: 2px solid #212121;
+	border-left: 2px solid #212121;
+	border-bottom: 2px solid #212121;
+}
+.cell-border-right-bottom {
+	border: 2px solid #fafafa;
+	border-bottom: 2px solid #212121;
+	border-right: 2px solid #212121;
+}
+.cell-border-right-top {
+	border: 2px solid #fafafa;
+	border-top: 2px solid #212121;
+	border-right: 2px solid #212121;
+}
 
 /*
 Player Info Design
@@ -118,7 +150,6 @@ Controls Container
 	align-content: center;
 	list-style-type: none;
 	flex-flow: column;
-	max-width: 300px;
 	margin: 0px auto;
 }
 #controls-container a {
