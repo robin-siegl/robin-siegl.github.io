@@ -2,7 +2,6 @@
 	font-family: 'Gochi Hand', cursive;
 	box-sizing: border-box;
 	font-size: 18px;
-	color: #0d47a1;
 }
 
 body {
@@ -10,9 +9,11 @@ body {
 	background-image: url("../img/notebookPattern.png");
 	background-repeat: repeat;
 	background-size: 50px;
+	padding: 5px;
 }
 h1 {
 	font-size: 3.97rem;
+	color: #0d47a1;
 }
 h2 {
 	font-size: 1.375rem;
@@ -37,8 +38,8 @@ Info Container Design
 #info-container {
 	border: 4px solid #212121;
 	max-width: 300px;
+	height: 300px;
 	margin: 0px auto;
-	background-color: #fafafa;
 	justify-content: center;
 	align-content: center;
 	flex-flow: column;
@@ -75,8 +76,8 @@ Board Game Design
 	flex-flow: row;
 }
 .cell {
-	width: 100px;
-	height: 100px;
+	width: 90px;
+	height: 90px;
 }
 .cell:hover {
 	cursor: pointer;
@@ -134,8 +135,8 @@ Board Game Design
 	border-right: 2px solid #212121;
 }
 .symbol-img {
-	width: 80px;
-	height: 80px;
+	width: 90px;
+	height: 90px;
 }
 
 /*
