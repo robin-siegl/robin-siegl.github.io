@@ -46,6 +46,9 @@ Info Container Design
 #info-container h1 {
 	color: #4caf50;
 }
+#info-container p {
+	font-size: 2.625rem;
+}
 button {
 	background-color: #212121;
 	color: #fafafa;
