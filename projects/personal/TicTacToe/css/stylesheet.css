@@ -5,7 +5,8 @@
 
 body {
 	text-align: center;
-	background-color: #fafafa;
+	background-image: url("../img/Unbenannt.png");
+	background-repeat: repeat;
 }
 
 a {
