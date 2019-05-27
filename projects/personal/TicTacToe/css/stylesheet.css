@@ -69,7 +69,7 @@ Board Game Design
 */
 
 #board-container {
-	margin: 25px auto;
+	margin: 75px auto;
 	max-width: 300px;
 }
 .row {
@@ -150,7 +150,6 @@ Player Info Design
 
 #player-container {
 	margin: 25px auto;
-	border: 2px solid #212121;
 	max-width: 300px;
 	display: flex;
 	justify-content: center;
@@ -160,8 +159,6 @@ Player Info Design
 .player {
 	width: 150px;
 	height: 200px;
-	background-color: #fafafa;
-	border: 2px solid #212121;
 	padding: 20px;
 }
 .player img {
