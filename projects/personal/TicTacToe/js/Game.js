@@ -33,7 +33,7 @@ class Game {
 	// actions when game ends with winner
 	end() {
 		// change info menu text and style
-		gameBoard.infoMenuStyle("flex", gameBoard.activePlayer.color, "Winner: Player " + gameBoard.activePlayer.id);
+		gameBoard.infoMenuStyle("flex", gameBoard.activePlayer.color, "<h2>Winner:</h2><p>Player " + gameBoard.activePlayer.id + "</p>");
 		
 		// change player menu text and style
 		if (gameBoard.activePlayer === player1) {
@@ -51,7 +51,7 @@ class Game {
 	// actions when game ends with no winner
 	draw() {
 		// change info menu text and style
-		gameBoard.infoMenuStyle("flex", gameSettings.colorInactive, "Draw");
+		gameBoard.infoMenuStyle("flex", gameSettings.colorInactive, "<h2>Draw</h2>");
 		
 		// change player menu text and style
 		gameBoard.playerMenuStyle(player1Menu, gameSettings.colorInactive, "Draw");
