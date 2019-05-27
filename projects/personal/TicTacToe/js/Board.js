@@ -76,7 +76,7 @@ class Board {
 		// check if space is empty
 		if (this.spaces[row][col].length <= 0) {
 			this.spaces[row][col] = this.activePlayer.symbol;
-			gameboardArray[row][col].innerHTML = "<img src='img/" + this.spaces[row][col] + ".png'>";
+			gameboardArray[row][col].innerHTML = "<img class='symbol-img' src='img/" + this.spaces[row][col] + ".png'>";
 			game.checkRules();
 
 			// only when game state is start change player
