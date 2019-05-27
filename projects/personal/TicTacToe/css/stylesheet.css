@@ -73,6 +73,7 @@ Board Game Design
 .cell {
 	width: 100px;
 	height: 100px;
+	background-color: transparent;
 }
 .cell:hover {
 	cursor: pointer;
