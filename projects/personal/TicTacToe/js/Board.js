@@ -22,7 +22,6 @@ class Board {
 
 			//change background color
 			for (let i = 0; i < cells.length; i++) {
-				cells[i].style.backgroundColor = gameSettings.colorLight;
 				cells[i].innerHTML = "";
 			}
 

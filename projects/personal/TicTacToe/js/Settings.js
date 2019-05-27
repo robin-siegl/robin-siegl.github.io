@@ -14,7 +14,7 @@ class Settings {
 // initialize settings
 const gameSettings = new Settings;
 gameSettings.colorActive = "#4caf50";
-gameSettings.colorInactive = "transparent";
+gameSettings.colorInactive = "#ebebeb";
 gameSettings.colorDark = "#212121";
 gameSettings.colorLight = "#fafafa";
 gameSettings.colorPlayer1 = "#b71c1c";
