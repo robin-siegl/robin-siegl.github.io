@@ -54,6 +54,11 @@ class Board {
 		infoMenu.style.display = display;
 		infoMenu.style.backgroundColor = backgroundColor;
 		infoMenu.children[0].innerHTML = state;
+		if (display === "flex") {
+			infoMenu.classList.add(fadeInAnimation);
+		} else {
+			infoMenu.classList.remove(fadeInAnimation);
+		}
 	}
 
 	// set active player
