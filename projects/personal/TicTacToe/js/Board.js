@@ -55,9 +55,9 @@ class Board {
 		infoMenu.style.backgroundColor = backgroundColor;
 		infoMenu.children[0].innerHTML = state;
 		if (display === "flex") {
-			infoMenu.classList.add(fadeInAnimation);
+			infoMenu.classList.add("fadeInAnimation");
 		} else {
-			infoMenu.classList.remove(fadeInAnimation);
+			infoMenu.classList.remove("fadeInAnimation");
 		}
 	}
 
