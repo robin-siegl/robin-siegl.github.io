@@ -149,6 +149,9 @@ section div {
 	font-weight: 700;
 	text-decoration: none;
 }
+footer {
+	height: 200px;
+}
 
 @media screen and (min-width: 600px) {
 
