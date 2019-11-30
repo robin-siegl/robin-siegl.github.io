@@ -1,6 +1,7 @@
 // set variables
 var lastUsed = 0; // last used template
 var loadingAnimationID = 7;
+var button = document.getElementById("btn-roleDice");
 var diceArray = ["Logo", "One", "Two", "Three", "Four", "Five", "Six", "loadinganimation"]; // array with dice templates content
 
 function switchClasses(objectID, reversedClassSwitch) {
@@ -30,6 +31,9 @@ function roleDice() {
 
   // add loading animation
   switchClasses(loadingAnimationID, false);
+  
+  // disable the role dice button
+  button.setAttribute("disabled", true);
 
   // wait 3 seconds and go on
   setTimeout(function(){ 
@@ -41,5 +45,8 @@ function roleDice() {
     switchClasses(randomNumberRoundToInt, false);
 
   }, 2000);
+  
+  // enable role dice button
+  button.removeAttribute("disabled");
   
 }
