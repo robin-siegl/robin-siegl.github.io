@@ -33,7 +33,7 @@ function roleDice() {
   switchClasses(loadingAnimationID, false);
   
   // disable the role dice button
-  button.setAttribute("disabled", true);
+  button.disabled = true;
 
   // wait 3 seconds and go on
   setTimeout(function(){ 
@@ -43,10 +43,10 @@ function roleDice() {
     // remove class display-none and add class display-block to add the css
     lastUsed = randomNumberRoundToInt;
     switchClasses(randomNumberRoundToInt, false);
+  
+    // disable the role dice button
+    button.disabled = false;
 
   }, 2000);
-  
-  // enable role dice button
-  button.removeAttribute("disabled");
   
 }
