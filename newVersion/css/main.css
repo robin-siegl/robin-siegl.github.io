@@ -349,18 +349,18 @@ footer {
     }
     header nav ul li a {
         margin: 0rem .5rem;
-        padding: .5rem;
+        padding: 1rem .5rem;
         font-size: 1rem;
     }
     #section-start h1 {
-        font-size: 2.5rem;
+        font-size: 4rem;
         text-align: center;
     }
     #section-start h1 span {
         font-size: 1.0375em;
     }
     #section-start h2 {
-        font-size: 2rem;
+        font-size: 3rem;
         text-align: center;
     }
     #personal-projects {
@@ -380,7 +380,10 @@ footer {
     }
 }
 
-@media only screen and (max-width: 399px) {
+@media only screen and (max-width: 459px) {
+    header {
+        background: hsla(207.5, 72.7%, 12.9%, .9);
+    }
     #section-start h1 {
         font-size: 1.75rem;
         text-align: center;
