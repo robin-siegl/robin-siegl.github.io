@@ -348,9 +348,8 @@ footer {
         background: linear-gradient(130deg, hsla(207.5, 72.7%, 12.9%, .9) 0%, hsla(264.6, 91%, 13.1%, .9) 170%);
     }
     header nav ul li a {
-        margin: 0rem .5rem;
-        padding: 1rem .5rem;
-        font-size: 1rem;
+        margin: 0rem 1rem;
+        padding: 1.05rem .5rem;
     }
     #section-start h1 {
         font-size: 4rem;
@@ -382,7 +381,12 @@ footer {
 
 @media only screen and (max-width: 459px) {
     header {
-        background: hsla(207.5, 72.7%, 12.9%, .9);
+        background: linear-gradient(130deg, hsla(207.5, 72.7%, 12.9%, .9) 0%, hsla(264.6, 91%, 13.1%, .9) 250%);
+    }
+    header nav ul li a {
+        margin: 0rem .5rem;
+        padding: 1.05rem .5rem;
+        font-size: 1rem;
     }
     #section-start h1 {
         font-size: 1.75rem;
