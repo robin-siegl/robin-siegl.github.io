@@ -381,7 +381,7 @@ footer {
 
 @media only screen and (max-width: 459px) {
     header {
-        background: linear-gradient(130deg, hsla(207.5, 72.7%, 12.9%, .9) 0%, hsla(264.6, 91%, 13.1%, .9) 250%);
+        background: linear-gradient(130deg, hsla(207.5, 72.7%, 12.9%, .9) 0%, hsla(264.6, 91%, 13.1%, .9) 200%);
     }
     header nav ul li a {
         margin: 0rem .5rem;
