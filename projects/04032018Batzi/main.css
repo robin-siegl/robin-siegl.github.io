@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background-color: #212121;
+}
+
+h1, h2 {
+    font-family: 'Mountains of Christmas', cursive;
+    color: #CCC;
+    font-size: 3rem;
+    text-align: center;
+}
+h2 {
+    font-size: 5rem;
+    transition: color .2s ease-in-out;
+}
+p {
+    font-family: 'Gothic A1', sans-serif;
+    color: #CCC;
+    font-size: 1.125rem;
+    text-align: center;
+}
+.headlinePadding {
+    padding: 1rem;
+}
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#container div {
+    font-family: 'Mountains of Christmas', cursive;
+    text-align: center;
+    color: #71BBD9;
+    font-size: 5rem;
+    flex-basis: 15rem;
+    height: 15rem;
+    border: .25rem solid #CCC;
+    margin: .5rem;
+    padding: .5rem;
+    transition: border .2s ease-in-out, color .2s ease-in-out;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+}
+.closed p {
+    display: none;
+}
+.opened p {
+    display: block;
+    color: #CCC;
+}
+#container div:hover {
+    border: .25rem solid #8C0335;
+    transition: border .2s ease-in-out, color .2s ease-in-out;
+    color: #8C0335;
+    cursor: pointer;
+}
+.day.opened {
+    background-color: #223459;
+    border: .25rem solid #8C0335;
+    transition: border .2s ease-in-out, color .2s ease-in-out;
+}
