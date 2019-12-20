@@ -6,6 +6,7 @@
 
 html, body {
     background-color: #212121;
+    padding: .5rem;
 }
 
 h1, h2 {
@@ -24,6 +25,15 @@ p {
     font-size: 1.125rem;
     text-align: center;
 }
+a,
+a:visited {
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 700;
+    color: #8C0335;
+}
+a:hover {
+    color: #71BBD9;
+}
 .headlinePadding {
     padding: 1rem;
 }
@@ -33,6 +43,8 @@ p {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    max-width: 1000px;
+    margin: 0px auto;
 }
 #container div {
     font-family: 'Mountains of Christmas', cursive;
@@ -67,4 +79,19 @@ p {
     background-color: #223459;
     border: .25rem solid #8C0335;
     transition: border .2s ease-in-out, color .2s ease-in-out;
+}
+
+#special {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    border: .25rem solid #8C0335;
+}
+#specialHeadline {
+    color: #71BBD9;
+}
+#specialParagraph {
+    text-align: left;
+    line-height: 1.5em;
+    margin: 2rem 0;
 }
