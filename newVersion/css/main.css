@@ -389,7 +389,7 @@ footer {
         font-size: 1rem;
     }
     #section-start h1 {
-        font-size: 1.75rem;
+        font-size: 2.125rem;
         text-align: center;
         margin: 0;
 
@@ -398,9 +398,9 @@ footer {
         font-size: 1.0375em;
     }
     #section-start h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         text-align: center;
-        margin: 2rem 0 0 0;
+        margin: 1rem 0 0 0;
 
     }
     #section-contact a {
