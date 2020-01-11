@@ -1,0 +1,61 @@
+h1, h2 {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 3.2em;
+    color: #181818;
+    letter-spacing: .125em;
+    text-transform: uppercase;
+}
+h2 {
+    font-weight: 400;
+    font-size: 1.75rem;
+    color: #181818;
+    letter-spacing: .125em;
+}
+
+#gallery > div > figure {
+    position: relative;
+}
+#gallery > div > figure > figcaption {
+    padding: .25em;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.125em;
+    font-weight: 700;
+    color: #181818;
+    text-shadow: 0 0 .2em #CCC;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+
+#locations > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: center;
+    list-style-type: none;
+}
+#locations > ul > li {
+    display: flex;
+    flex-direction: row;
+}
+#locations > ul > li > ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .5em;
+}
+#locations > ul > li > ul > li > a{
+    color: dodgerblue;
+}
+
+#sponsors li {
+    padding: 2em;
+}
