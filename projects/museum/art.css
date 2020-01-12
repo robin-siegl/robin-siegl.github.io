@@ -59,3 +59,17 @@ h2 {
 #sponsors li {
     padding: 2em;
 }
+
+/* Smartphone Media Querie */
+
+@media screen and (max-width: calc(48em - 1px)) {
+    
+    h1 {
+        font-weight: 700;
+        font-size: 2.5em;
+        color: #181818;
+        letter-spacing: .125em;
+        text-transform: uppercase;
+    }
+
+}
