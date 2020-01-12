@@ -173,14 +173,6 @@ img, video {
         min-height: 100%;
     }
 
-    /* Change margin on mobile */
-
-    .container > * {
-        width: calc((100% / 12) - 1em);
-        padding: 0;
-        margin: .5em;
-    }
-
     /* Columns for small Media Querie */
 
     .col-sm-1 {
