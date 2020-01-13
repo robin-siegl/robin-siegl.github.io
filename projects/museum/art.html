@@ -3,19 +3,22 @@
     <head>
         <title>Art Museum</title>
         <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Roboto:400,700&display=swap" rel="stylesheet">
-        <link href="gridsystem.css" rel="stylesheet">
-        <link href="designsystem.css" rel="stylesheet">
+        <link href="../GridSystem/gridsystem.css" rel="stylesheet">
+        <link href="../GridSystem/designsystem.css" rel="stylesheet">
         <link href="art.css" rel="stylesheet">
     </head>
     <body>
         <header>
             <nav>
-                <ul class="container content-x-center nav-light-border">
-                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="#gallery">Gallery</a></li>
-                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="#locations">Locations</a></li>
-                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="#sponsors">Sponsors</a></li>
+                <div id="nav-button" class="mobile-nav-button">
+                        <img src="ressources/menu-24px.svg">
+                </div>
+                <ul class="container content-x-center nav-light-border mobile-nav-displayNone">
+                    <li class="col-lg-2 col-md-3 col-sm-8"><a href="#gallery">Gallery</a></li>
+                    <li class="col-lg-2 col-md-3 col-sm-8"><a href="#locations">Locations</a></li>
+                    <li class="col-lg-2 col-md-3 col-sm-8"><a href="#sponsors">Sponsors</a></li>
                 </ul>
             </nav>
             
@@ -146,5 +149,7 @@
                     </ul>
             </section>
         </main>
+
+        <script src="art.js"></script>
     </body>
 </html>
