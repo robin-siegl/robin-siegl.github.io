@@ -99,8 +99,8 @@ nav > ul {
         position: absolute;
         z-index: 10;
         top: .5em;
-        left: .25em;
-        background-color: rgba(255,255,255, .8);
+        left: .125em;
+        background-color: rgba(255,255,255, .7);
     }
     #nav-button:hover {
         cursor: pointer;
