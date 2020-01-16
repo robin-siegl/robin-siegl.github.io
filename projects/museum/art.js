@@ -7,14 +7,19 @@ navButton.addEventListener("click", function displayNav(e) {
     // if classlist contains mobile-nav-displayNone -> remove this class and display navigationlist
     if (nav.classList.contains("mobile-nav-displayNone")) {
         nav.classList.remove("mobile-nav-displayNone");
-        /* navButton.children[0].src = "ressources/close-24px.svg"; */
         navButton.classList.add("mobile-nav-buttonOpen");
 
     // else -> add mobile-nav-displayNone class and hide navigationlist
     } else {
         nav.classList.add("mobile-nav-displayNone");
-        /* navButton.children[0].src = "ressources/menu-24px.svg"; */
         navButton.classList.remove("mobile-nav-buttonOpen");
     }
 
+});
+
+nav.addEventListener("click", function closeNavAuto(e) {
+    if (e.target.localName == "a") {
+        nav.classList.add("mobile-nav-displayNone");
+        navButton.classList.remove("mobile-nav-buttonOpen");
+    }
 });
