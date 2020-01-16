@@ -87,6 +87,9 @@ nav > ul {
         color: #181818;
         letter-spacing: 0;
     }
+    .container-spacing {
+        padding: 2em 0;
+    }
     #locations > ul > li > img {
         width: 6.25em;
         height: 6.25em;
