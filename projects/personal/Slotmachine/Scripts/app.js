@@ -21,6 +21,8 @@ let calCoins;
 let currentGameCoins;
 let currentGameDifficulty;
 
+document.addEventListener("touchstart", function() {}, false );
+
 // Save Game
 options[0].addEventListener("click", function() {
     saveGame();
