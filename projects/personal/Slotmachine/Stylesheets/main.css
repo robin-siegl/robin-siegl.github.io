@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    background-color: #832232;
+}
+
+main > div:first-child {
+    display: none;
+}
+main > div:last-child {
+    display: block;
+    margin-top: 2em;
+}
+main > div:first-child.gameStarted {
+    display: block;
+    margin-top: 2em;
+}
+main > div:first-child.gameStarted + div:last-child {
+    display: none;
+}
+
+#gameMenu > div {
+    text-align: center;
+    background-color: #49111c;
+    border-radius: 2em;
+    padding: 1.5em;
+}
+#gameMenu > div:nth-child(3),
+#gameMenu > div:last-child {
+    background-color: #a9927b;
+}
+#gameMenu > div > p {
+    color: #f2f4f3;
+    font-family: Roboto, sans-serif;
+    font-size: 1.5em;
+}
+
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: Monoton, sans-serif;
+    font-size: 4em;
+    color: #0a0908;
+}
+h2 {
+    font-family: Righteous, sans-serif;
+    font-size: 2em;
+    color: #a9927b;
+}
+p {
+    font-family: Roboto, sans-serif;
+    font-size: 1.25em;
+}
+
+#statusbar img {
+    width: 4em;
+    height: 4em;
+    margin: 0 1em;
+}
+#slotmachine img {
+    width: 6em;
+    height: 6em;
+}
+
+#statusbar > div {
+    background-color: #49111c;
+    border-radius: 2em;
+    color: #f2f4f3;
+}
+#statusbar > div:last-child > div:first-child {
+    width: 2.667em;
+    height: 2.667em;
+    margin: .8em;
+    padding: .8em 0;
+    text-align: center;
+    border-radius: 100%;
+    background-color: #ffc000;
+    color: #0a0908;
+    font-family: Roboto, sans-serif;
+    font-size: 1.5em;
+}
+#statusbar > div:last-child > div:last-child > div {
+    background-color: #f2f4f3;
+    border-radius: 1em;
+    height: 1.25em;
+    padding: .125em;
+    width: 100%;
+}
+#statusbar > div:last-child > div:last-child > div > div {
+    background-color: #ffc000;
+    border-radius: .5em;
+    height: 1em;
+    width: 100%;
+}
+
+#slotmachine > div {
+    background-color: #f2f4f3;
+    border: .5em solid #49111c;
+    border-radius: 2em;
+    padding: 3em 1.5em;
+}
+
+#interaction {
+    align-items: stretch;
+}
+#interaction > div:nth-child(1),
+#interaction > div:nth-child(3) {
+    background-color: #49111c;
+    border-radius: 2em;
+    color: #f2f4f3;
+    text-align: center;
+    padding: 2em 0 0 0;
+}
+#interaction > div:nth-child(1) > img,
+#interaction > div:nth-child(3) > img {
+    margin: 0 0 -2.5em 0;
+    width: 3em;
+    height: 3em;
+}
+#interaction > div:nth-child(2) {
+    background-color: #49111c;
+    border-radius: 2em;
+    text-align: center;
+    padding: 1em 0;
+}
+#interaction > div:nth-child(4) {
+    background-color: #49111c;
+    border-radius: 2em;
+    text-align: center;
+}
+#interaction > div:nth-child(4) > p:first-child {
+    color: #f2f4f3;
+    font-family: Roboto, sans-serif;
+    font-size: 1.25em;
+    margin: 1.25em 0 0 0;
+}
+#interaction > div:nth-child(4) > p:last-child {
+    color: #f2f4f3;
+    font-family: Roboto, sans-serif;
+    font-size: 2.5em;
+    margin: .125em 0 0 0;
+}
+#interaction > div:last-child {
+    background-color: #49111c;
+    border-radius: 2em;
+}
+#interaction > div:last-child > div:first-child > img {
+    margin: .8em;
+    width: 4em;
+    height: 4em;
+}
+#interaction > div p {
+    color: #f2f4f3;
+    font-family: Roboto, sans-serif;
+    font-size: 2em;
+    margin: .8em 0;
+}
+#interaction,
+#options,
+main > div:last-child > div > div {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+#interaction > div:hover {
+    cursor: pointer;
+}
+
+#gameMessage div {
+    background-color: #49111c;
+    border-radius: 2em;
+    padding: 2em;
+}
+#gameMessage div p {
+    font-size: 1.5em;
+    color: #f2f4f3;
+}
+#gameMessage p > span {
+    font-weight: 700;
+    color: #ffc000;
+}
+
+#options {
+    align-items: flex-start;
+}
+#options > div {
+    background-color: #a9927b;
+    border-radius: 2em;
+}
+#options > div > p {
+    text-align: center;
+    color: #f2f4f3;
+    font-family: Roboto, sans-serif;
+    padding: 1em;
+}
+#options > div:last-child,
+#gameMenu > div:last-child {
+    background-color: #0a0908;
+}
+
+@media screen and (max-width: calc(56.25em)) {
+    #slotmachine > div {
+        background-color: #f2f4f3;
+        border: .25em solid #49111c;
+        border-radius: 2em;
+        padding: 3em 8vw;
+    }
+}
+
+@media screen and (max-width: calc(40.625em)) {
+    h1 {
+        font-size: 3em;
+    }
+    #slotmachine > div {
+        background-color: #f2f4f3;
+        border: .25em solid #49111c;
+        border-radius: 2em;
+        padding: 3em 5vw;
+    }
+}

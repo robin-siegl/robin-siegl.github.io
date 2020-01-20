@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Slotmaschine</title>
+        <meta charset="utf-8">
+
+        <link href="https://fonts.googleapis.com/css?family=Monoton|Roboto:400,700|Righteous&display=swap" rel="stylesheet">
+        <link href="Stylesheets/gridsystem.css" rel="stylesheet">
+        <link href="Stylesheets/main.css" rel="stylesheet">
+        <link href="Stylesheets/animation.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Slotmachine</h1>
+        </header>
+        <main>
+            <div>
+                <!-- Statusbar with Money and Lvl Info -->
+                <div class="container" id="statusbar">
+                    <div class="col-lg-6 col-md-12 container">
+                        <div class="col-lg-3">
+                            <img src="Assets/Coins.svg">
+                        </div>
+                        <div class="col-lg-9">
+                            <h2>Money:</h2>
+                            <p>222$</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 container">
+                        <div class="col-lg-3">
+                            42
+                        </div>
+                        <div class="col-lg-9">
+                            <h2>Level:</h2>
+                            <div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slotmachine output -->
+                <div class="container" id="slotmachine">
+                    <div class="col-lg-2 col-md-4">
+                        <img src="Assets/Rhombus.svg">
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <img src="Assets/Heart.svg">
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <img src="Assets/BronzeCoin.svg">
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <img src="Assets/GreenCoin.svg">
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <img src="Assets/Diamond.svg">
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <img src="Assets/Rhombus.svg">
+                    </div>
+                </div>
+
+                <!-- Gamesettings (Coins per Game, Later difficulty) and Insert coin -->
+                <div class="container" id="interaction">
+                    <div class="col-lg-2 col-md-4">
+                        <img src="Assets/Minus.svg">
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <p>32$</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <img src="Assets/Plus.svg">
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <p>Difficulty:</p>
+                        <p>1</p>
+                    </div>
+                    <div class="col-lg-4 col-md-8 container">
+                        <div class="col-lg-3">
+                            <img src="Assets/Coin.svg">
+                        </div>
+                        <div class="col-lg-9">
+                            <p>Insert Coin</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gamemessage Output -->
+                <div class="container" id="gameMessage">
+                    <div class="col-lg-12">
+                        <p>Welcome new Player!</p>
+                    </div>
+                </div>
+
+                <!-- Options -->
+                <div id="options" class="container container-spacing">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <p>Save Game</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <p>Load Game</p>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+                        <p>Help</p>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+                        <p>Version 0.1</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay -->
+            <div>
+                <div id="gameMenu" class="container">
+                    <div class="col-lg-12">
+                        <p>New Game</p>
+                    </div>
+                    <div class="col-lg-12">
+                        <p>Load Game</p>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <p>Help</p>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <p>Version 0.1</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="Scripts/app.js"></script>
+        <script src="Scripts/gameMenu.js"></script>
+    </body>
+</html>

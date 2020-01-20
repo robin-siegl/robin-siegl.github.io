@@ -1,0 +1,102 @@
+@keyframes slotDisplay {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    25% {
+        transform: scale(.5);
+        opacity: .5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    75% {
+        transform: scale(.5);
+        opacity: .5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes removeCoin {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes addCoin {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes win {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#slotmachine.animateSlotdisplays > div > img {
+    animation-name: slotDisplay;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+#interaction > div:nth-child(odd),
+#interaction > div:nth-child(4),
+main > div:last-child > div > div,
+#options > div {
+    transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#interaction > div:nth-child(odd):active,
+#interaction > div:nth-child(4):active,
+main > div:last-child > div > div:active,
+#options > div:active {
+    transform: scale(.8);
+}
+#options > div:last-child:active {
+    transform: scale(1);
+}
+.buttonDisabled {
+    filter: grayscale(100%);
+    transform: scale(.8);
+    transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.removedCoin {
+    animation-name: removeCoin;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}
+.addedCoin {
+    animation-name: addCoin;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}
+.winAnimation > div {
+    animation-name: win;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}

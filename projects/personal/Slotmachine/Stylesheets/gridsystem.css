@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Standard stylings for Listcontainers and medias */
+
+ul.container {
+    list-style-type: none;
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Container styling */
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: auto;
+    max-width: 71.25em;
+    padding: 0;
+}
+.container .container {
+    padding: 0;
+}
+.container > * {
+    width: calc((100% / 12) - 2em);
+    padding: 0;
+    margin: 1em;
+}
+.container-spacing {
+    margin: 10em auto;
+}
+
+/* Different alignment of container content */
+
+.content-x-center {
+    justify-content: center;
+}
+.content-x-left {
+    justify-content: flex-start;
+}
+.content-x-right {
+    justify-content: flex-end;
+}
+.content-y-center {
+    align-items: center;
+}
+.content-y-top {
+    align-items: flex-start;
+}
+.content-y-bottom {
+    align-items: flex-end;
+}
+
+/* Minimum full height for this container element or auto height */
+
+.container-lg-fullHeight {
+    min-height: 100vh;
+}
+.container-lg-autoHeight {
+    min-height: 100%;
+}
+
+/* Columns for large Media Querie - Notebook, Desktops */
+
+.col-lg-1 {
+    width: calc((100% / 12) - 2em);
+}
+.col-lg-2 {
+    width: calc((100% / 12 * 2) - 2em);
+}
+.col-lg-3 {
+    width: calc((100% / 12 * 3) - 2em);
+}
+.col-lg-4 {
+    width: calc((100% / 12 * 4) - 2em);
+}
+.col-lg-5 {
+    width: calc((100% / 12 * 5) - 2em);
+}
+.col-lg-6 {
+    width: calc((100% / 12 * 6) - 2em);
+}
+.col-lg-7 {
+    width: calc((100% / 12 * 7) - 2em);
+}
+.col-lg-8 {
+    width: calc((100% / 12 * 8) - 2em);
+}
+.col-lg-9 {
+    width: calc((100% / 12 * 9) - 2em);
+}
+.col-lg-10 {
+    width: calc((100% / 12 * 10) - 2em);
+}
+.col-lg-11 {
+    width: calc((100% / 12 * 11) - 2em);
+}
+.col-lg-12 {
+    width: calc((100% / 12 * 12) - 2em);
+}
+
+/* Tablet Media Querie Standard: 64em - 1px*/
+
+@media screen and (max-width: calc(56.25em)) {
+
+    /* Minimum full height for this container element or auto height */
+    
+    .container-md-fullHeight {
+        min-height: 100vh;
+    }
+    .container-md-autoHeight {
+        min-height: 100%;
+    }
+
+    /* Columns for medium Media Querie */
+
+    .col-md-1 {
+        width: calc((100% / 12) - 2em);
+    }
+    .col-md-2 {
+        width: calc((100% / 12 * 2) - 2em);
+    }
+    .col-md-3 {
+        width: calc((100% / 12 * 3) - 2em);
+    }
+    .col-md-4 {
+        width: calc((100% / 12 * 4) - 2em);
+    }
+    .col-md-5 {
+        width: calc((100% / 12 * 5) - 2em);
+    }
+    .col-md-6 {
+        width: calc((100% / 12 * 6) - 2em);
+    }
+    .col-md-7 {
+        width: calc((100% / 12 * 7) - 2em);
+    }
+    .col-md-8 {
+        width: calc((100% / 12 * 8) - 2em);
+    }
+    .col-md-9 {
+        width: calc((100% / 12 * 9) - 2em);
+    }
+    .col-md-10 {
+        width: calc((100% / 12 * 10) - 2em);
+    }
+    .col-md-11 {
+        width: calc((100% / 12 * 11) - 2em);
+    }
+    .col-md-12 {
+        width: calc((100% / 12 * 12) - 2em);
+    }
+}
+
+/* Smartphone Media Querie Standard: 48em - 1px*/
+
+@media screen and (max-width: calc(40.625em)) {
+
+    /* Minimum full height for this container element or auto height */
+    
+    .container-sm-fullHeight {
+        min-height: 100vh;
+    }
+    .container-sm-autoHeight {
+        min-height: 100%;
+    }
+
+    /* Columns for small Media Querie */
+
+    .col-sm-1 {
+        width: calc((100% / 12) - 2em);
+    }
+    .col-sm-2 {
+        width: calc((100% / 12 * 2) - 2em);
+    }
+    .col-sm-3 {
+        width: calc((100% / 12 * 3) - 2em);
+    }
+    .col-sm-4 {
+        width: calc((100% / 12 * 4) - 2em);
+    }
+    .col-sm-5 {
+        width: calc((100% / 12 * 5) - 2em);
+    }
+    .col-sm-6 {
+        width: calc((100% / 12 * 6) - 2em);
+    }
+    .col-sm-7 {
+        width: calc((100% / 12 * 7) - 2em);
+    }
+    .col-sm-8 {
+        width: calc((100% / 12 * 8) - 2em);
+    }
+    .col-sm-9 {
+        width: calc((100% / 12 * 9) - 2em);
+    }
+    .col-sm-10 {
+        width: calc((100% / 12 * 10) - 2em);
+    }
+    .col-sm-11 {
+        width: calc((100% / 12 * 11) - 2em);
+    }
+    .col-sm-12 {
+        width: calc((100% / 12 * 12) - 2em);
+    }
+}
