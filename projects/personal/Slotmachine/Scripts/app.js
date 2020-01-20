@@ -7,7 +7,7 @@ let interaction = document.getElementById("interaction").children;              
 let gameMessage = document.getElementById("gameMessage").children[0].children[0];                   // Output current game messages
 const assetsArray = ["Assets/Rhombus.svg","Assets/Heart.svg","Assets/BronzeCoin.svg","Assets/GreenCoin.svg","Assets/Diamond.svg"];
 const loadingArray = ["Assets/letter-C.svg","Assets/letter-A.svg","Assets/letter-S.svg","Assets/letter-I.svg","Assets/letter-N.svg","Assets/letter-O.svg"];
-const hostPath = "https://robin-siegl.github.io/projects/personal/Slotmachine/";                                   // Path to the assets folder -> root path
+const hostPath = "http://localhost/Projects/Casino/Slotmachine/";                                   // Path to the assets folder -> root path
 let gameState = false;                                                                              // False = No interaction made | True = Insertcoin clicked
 let options = document.getElementById("options").children;                                          // Array with ineractions | 0 save game - 1 load game - 2 help - 3 version
 
@@ -219,67 +219,65 @@ function insertCoin() {
 
 // calculate earned coins
 function calculateCoins() {
-    switch(checkIcons()) {
-        case 1:
-            calCoins = currentGameCoins * 0;
-            break;
-        case 2:
-            calCoins = currentGameCoins * 1;
-            break;
-        case 3:
-            calCoins = currentGameCoins * 1.75;
-            break;
-        case 4:
-            calCoins = currentGameCoins * 2.25;
-            break;
-        case 5:
-            calCoins = currentGameCoins * 3;
-            break;
-        case 6:
-            calCoins = currentGameCoins * 4;
-            break;
-        default:
-            updateMessageBox("Error!");
-    }
 
-    switch(slotmachine[0].children[0].src) {
-        case hostPath + assetsArray[0]:
-            calCoins = calCoins * 1;
-            break;
-        case hostPath + assetsArray[1]:
-            calCoins = calCoins * 1.25;
-            break;
-        case hostPath + assetsArray[2]:
-            calCoins = calCoins * 1.75;
-            break;
-        case hostPath + assetsArray[3]:
-            calCoins = calCoins * 2.5;
-            break;
-        case hostPath + assetsArray[4]:
-            calCoins = calCoins * 3.5;
-            break;
-        default:
-            updateMessageBox("Error!");
+    if (gameState) {
+        switch(checkIcons()) {
+            case 1:
+                calCoins = currentGameCoins * 0;
+                break;
+            case 2:
+                calCoins = currentGameCoins * 1;
+                break;
+            case 3:
+                calCoins = currentGameCoins * 1.75;
+                break;
+            case 4:
+                calCoins = currentGameCoins * 2.25;
+                break;
+            case 5:
+                calCoins = currentGameCoins * 3;
+                break;
+            case 6:
+                calCoins = currentGameCoins * 4;
+                break;
+            default:
+                updateMessageBox("Error!");
+        }
+    
+        switch(slotmachine[0].children[0].src) {
+            case hostPath + assetsArray[0]:
+                calCoins = calCoins * 1;
+                break;
+            case hostPath + assetsArray[1]:
+                calCoins = calCoins * 1.25;
+                break;
+            case hostPath + assetsArray[2]:
+                calCoins = calCoins * 1.75;
+                break;
+            case hostPath + assetsArray[3]:
+                calCoins = calCoins * 2.5;
+                break;
+            case hostPath + assetsArray[4]:
+                calCoins = calCoins * 3.5;
+                break;
+            default:
+                updateMessageBox("Error!");
+        }
+    
+        if (calCoins > 0 ) {
+            playerMoney = playerMoney + calCoins;
+            updateMessageBox("You won!  <span>+" + calCoins.toFixed(2) + "$</span>");
+            updateLabels();
+            checkPlayerMoney();
+            won();
+        } else {
+            updateMessageBox("You lose!");
+        }
+    
+        // change gameState to false
+        gameState = false;
     }
-
-    if (calCoins > 0 ) {
-        console.log(playerMoney +  " + " + calCoins + " = " + (playerMoney + calCoins));
-        playerMoney = playerMoney + calCoins;
-        console.log("added Coins. New Player Money: " + playerMoney));
-        updateMessageBox("You won!  <span>+" + calCoins.toFixed(2) + "$</span>");
-        console.log("AFTER MESSAGEBOX: Updated player money: " + playerMoney);
-        updateLabels();
-        console.log("AFTER LABELS: Updated player money: " + playerMoney);
-        checkPlayerMoney();
-        console.log("AFTER CHECKPLAYERMONEY: Updated player money: " + playerMoney);
-        won();
-        console.log("AFTER WON: Updated player money: " + playerMoney);
-    } else {
-        updateMessageBox("You lose!");
-    }
-
-    // change gameState to false
-    gameState = false;
+    
 }
 
 // check for the same icons - if > 0 - highlight slot display and retuen value
