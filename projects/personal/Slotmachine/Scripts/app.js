@@ -263,7 +263,6 @@ function calculateCoins() {
     }
 
     if (calCoins > 0 ) {
-        console.log(playerMoney + " + " + calCoins + " = " + (playerMoney + calCoins));
         playerMoney = playerMoney + calCoins;
         updateMessageBox("You won!  <span>+" + calCoins.toFixed(2) + "$</span>");
         updateLabels();
