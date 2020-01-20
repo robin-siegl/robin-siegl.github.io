@@ -7,7 +7,7 @@ let interaction = document.getElementById("interaction").children;              
 let gameMessage = document.getElementById("gameMessage").children[0].children[0];                   // Output current game messages
 const assetsArray = ["Assets/Rhombus.svg","Assets/Heart.svg","Assets/BronzeCoin.svg","Assets/GreenCoin.svg","Assets/Diamond.svg"];
 const loadingArray = ["Assets/letter-C.svg","Assets/letter-A.svg","Assets/letter-S.svg","Assets/letter-I.svg","Assets/letter-N.svg","Assets/letter-O.svg"];
-const hostPath = "http://localhost/Projects/Casino/Slotmachine/";                                   // Path to the assets folder -> root path
+const hostPath = "https://robin-siegl.github.io/projects/personal/Slotmachine/";                                   // Path to the assets folder -> root path
 let gameState = false;                                                                              // False = No interaction made | True = Insertcoin clicked
 let options = document.getElementById("options").children;                                          // Array with ineractions | 0 save game - 1 load game - 2 help - 3 version
 
