@@ -214,7 +214,7 @@ main > div:last-child > div > div {
 
 @media screen and (max-width: calc(40.625em)) {
     h1 {
-        font-size: 3em;
+        font-size: 2em;
     }
     #slotmachine > div {
         background-color: #f2f4f3;
