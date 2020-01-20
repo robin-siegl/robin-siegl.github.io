@@ -255,16 +255,16 @@ function calculateCoins() {
                 calCoins = calCoins * 1;
                 break;
             case hostPath + assetsArray[1]:
-                calCoins = calCoins * 1.25;
+                calCoins = calCoins * 1.5;
                 break;
             case hostPath + assetsArray[2]:
-                calCoins = calCoins * 1.75;
+                calCoins = calCoins * 2;
                 break;
             case hostPath + assetsArray[3]:
-                calCoins = calCoins * 2.5;
+                calCoins = calCoins * 2.75;
                 break;
             case hostPath + assetsArray[4]:
-                calCoins = calCoins * 3.5;
+                calCoins = calCoins * 3.75;
                 break;
             default:
                 updateMessageBox("Error!");
