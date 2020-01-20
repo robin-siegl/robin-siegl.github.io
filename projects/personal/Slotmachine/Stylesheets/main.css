@@ -100,7 +100,8 @@ p {
     background-color: #f2f4f3;
     border: .5em solid #49111c;
     border-radius: 2em;
-    padding: 3em 1.5em;
+    text-align: center;
+    padding: 3em 1em;
 }
 
 #interaction {
@@ -208,18 +209,18 @@ main > div:last-child > div > div {
         background-color: #f2f4f3;
         border: .25em solid #49111c;
         border-radius: 2em;
-        padding: 3em 8vw;
+        padding: 1.5em 0;
     }
 }
 
 @media screen and (max-width: calc(40.625em)) {
     h1 {
-        font-size: 3em;
+        display: none;
     }
     #slotmachine > div {
         background-color: #f2f4f3;
-        border: .25em solid #49111c;
+        border: .125em solid #49111c;
         border-radius: 2em;
-        padding: 3em 5vw;
+        padding: .25em;
     }
 }
