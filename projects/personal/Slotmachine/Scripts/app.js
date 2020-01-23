@@ -7,7 +7,7 @@ let interaction = document.getElementById("interaction").children;              
 let gameMessage = document.getElementById("gameMessage").children[0].children[0];                   // Output current game messages
 const assetsArray = ["Assets/Rhombus.svg","Assets/Heart.svg","Assets/BronzeCoin.svg","Assets/GreenCoin.svg","Assets/Diamond.svg"];
 const loadingArray = ["Assets/letter-C.svg","Assets/letter-A.svg","Assets/letter-S.svg","Assets/letter-I.svg","Assets/letter-N.svg","Assets/letter-O.svg"];
-const hostPath = "https://robin-siegl.github.io/projects/personal/Slotmachine/";                                   // Path to the assets folder -> root path
+const hostPath = window.location.href;                                                              // Path to the assets folder -> root path
 let gameState = false;                                                                              // False = No interaction made | True = Insertcoin clicked
 let options = document.getElementById("options").children;                                          // Array with ineractions | 0 save game - 1 load game - 2 help - 3 version
 
@@ -20,6 +20,10 @@ let gameDifficulty;
 let calCoins;
 let currentGameCoins;
 let currentGameDifficulty;
+
+// Hardcode!!!
+let xpBarLvlWidth = 100;
+let dummyXpBarWidth;
 
 
 // Enable :active on mobile browser
@@ -40,8 +44,21 @@ options[2].addEventListener("click", function(){
     window.open("help.html", '_blank');
 });
 
-// decrease coin cost
-interaction[0].addEventListener("click", function() {
+// check if button is enabled or disabled
+function decreaseButtonState() {
+    // recheck if gameCoin is in the range of 1-64
+    if (gameCoins <= 1) {
+        interaction[0].classList.add("buttonDisabled");
+        if (interaction[2].classList.contains("buttonDisabled")) {
+            interaction[2].classList.remove("buttonDisabled");
+        }
+    } else if (gameCoins < 64) {
+        interaction[2].classList.remove("buttonDisabled");
+    }
+}
+
+// function to decrease coins per game
+function decreaseCoinPerGame() {
     // check if gameCoin is in the range of 1-64
     if (gameCoins > 1) {
         // divide gameCoins by 2
@@ -56,18 +73,27 @@ interaction[0].addEventListener("click", function() {
             interaction[1].classList.remove("removedCoin");
         }, 500);
 
-        // recheck if gameCoin is in the range of 1-64
-        if (gameCoins <= 1) {
-            interaction[0].classList.add("buttonDisabled");
-        } else if (gameCoins < 64) {
-            interaction[2].classList.remove("buttonDisabled");
-        }
+        decreaseButtonState();
     }
     checkPlayerMoney();
-});
+}
 
-// increase coin cost
-interaction[2].addEventListener("click", function() {
+// check if button is enabled or disabled
+function increaseButtonState() {
+    // recheck if gameCoin is in the range of 1-64
+    if (gameCoins >= 64) {
+        interaction[2].classList.add("buttonDisabled");
+        if (interaction[0].classList.contains("buttonDisabled")) {
+            interaction[0].classList.remove("buttonDisabled");
+        }
+        
+    } else if (gameCoins > 1) {
+        interaction[0].classList.remove("buttonDisabled");
+    }
+}
+
+// function to increase coins per game
+function increaseCoinPerGame() {
     // check if gameCoin is in the range of 1-64
     if (gameCoins < 64) {
         // multiply gameCoins by 2
@@ -82,14 +108,19 @@ interaction[2].addEventListener("click", function() {
             interaction[1].classList.remove("addedCoin");
         }, 500);
 
-        // recheck if gameCoin is in the range of 1-64
-        if (gameCoins >= 64) {
-            interaction[2].classList.add("buttonDisabled");
-        } else if (gameCoins > 1) {
-            interaction[0].classList.remove("buttonDisabled");
-        }
+        increaseButtonState();
     }
     checkPlayerMoney();
+}
+
+// decrease coin cost
+interaction[0].addEventListener("click", function() {
+    decreaseCoinPerGame();
+});
+
+// increase coin cost
+interaction[2].addEventListener("click", function() {
+    increaseCoinPerGame();
 });
 
 // change difficulty
@@ -136,11 +167,61 @@ function checkPlayerMoney() {
     }
 }
 
+// lvl system
+function checkLvlSytsem() {
+    if (playerLvl < 1) {
+        xpBarLvlWidth = 100;
+    } else if (playerLvl < 5) {
+        xpBarLvlWidth = 125;
+    } else if (playerLvl < 10) {
+        xpBarLvlWidth = 150;
+    } else if (playerLvl < 20) {
+        xpBarLvlWidth = 175;
+    } else if (playerLvl < 30) {
+        xpBarLvlWidth = 200;
+    } else if (playerLvl < 50) {
+        xpBarLvlWidth = 250;
+    } else if (playerLvl < 75) {
+        xpBarLvlWidth = 300;
+    } else if (playerLvl < 100) {
+        xpBarLvlWidth = 400;
+    } else if (playerLvl >= 100) {
+        xpBarLvlWidth = 500;
+    }
+}
+
+// lvl up animation
+function lvlUp() {
+    lvl.classList.add("lvlUp");
+    setTimeout(function(){
+        lvl.classList.remove("lvlUp");
+    },2000);
+}
+
 // update all labels
 function updateLabels() {
+    // check for current xpBarLvlWidth
+    checkLvlSytsem();
+    // calc xpbar width
+    dummyXpBarWidth = (100 / xpBarLvlWidth) * playerXp;
+
+    // check if lvl up
+    if (dummyXpBarWidth >= 200) {
+        dummyXpBarWidth -= 200;
+        playerXp -= (xpBarLvlWidth * 2);
+        playerLvl += 2;
+        lvlUp();
+    } else if (dummyXpBarWidth >= 100) {
+        dummyXpBarWidth -= 100;
+        playerXp -= xpBarLvlWidth;
+        playerLvl += 1;
+        lvlUp();
+    }
+
+    // update labels
+    xpBar.style.width = dummyXpBarWidth + "%";
     money.innerHTML = playerMoney.toFixed(2) + "$";
     lvl.innerHTML = playerLvl;
-    xpBar.style.width = playerXp + "%";
 }
 
 // set slot displays to "CASINO"
@@ -189,6 +270,9 @@ function loadGame() {
         updateLabels();
         updateMessageBox("Welcome Player!");
         standardSlotdisplay();
+        decreaseButtonState();
+        increaseButtonState();
+        checkPlayerMoney();
         alert("Game loaded!");
     }
 }
@@ -223,6 +307,25 @@ function insertCoin() {
     }
 }
 
+// xp calculations
+function calculateXpPerGame() {
+    
+    if (gameState) {
+        switch(currentGameDifficulty) {
+            case 1:
+                playerXp += 5;
+                break;
+            case 2:
+                playerXp += 10;
+                break;
+            case 3:
+                playerXp += 15;
+                break;
+        }
+    }
+
+}
+
 // calculate earned coins
 function calculateCoins() {
 
@@ -233,18 +336,23 @@ function calculateCoins() {
                 break;
             case 2:
                 calCoins = currentGameCoins * 1;
+                playerXp += 10;
                 break;
             case 3:
                 calCoins = currentGameCoins * 1.75;
+                playerXp += 20;
                 break;
             case 4:
                 calCoins = currentGameCoins * 2.25;
+                playerXp += 30;
                 break;
             case 5:
                 calCoins = currentGameCoins * 3;
+                playerXp += 50;
                 break;
             case 6:
                 calCoins = currentGameCoins * 4;
+                playerXp += 75;
                 break;
             default:
                 updateMessageBox("Error!");
@@ -273,12 +381,17 @@ function calculateCoins() {
         if (calCoins > 0 ) {
             playerMoney = playerMoney + calCoins;
             updateMessageBox("You won!  <span>+" + calCoins.toFixed(2) + "$</span>");
-            updateLabels();
             checkPlayerMoney();
             won();
         } else {
             updateMessageBox("You lose!");
         }
+
+        // calculated xp
+        calculateXpPerGame();
+
+        // update labels
+        updateLabels();
     
         // change gameState to false
         gameState = false;
