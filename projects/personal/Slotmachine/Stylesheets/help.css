@@ -1,0 +1,92 @@
+body, html {
+    background-color: #832232;
+    margin: 4em 0;
+}
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: Monoton, sans-serif;
+    font-size: 4em;
+    color: #0a0908;
+}
+h2, h3, h4, p, figcaption {
+    font-family: Roboto, sans-serif;
+    color: #0a0908;
+}
+h2 {
+    font-size: 2.25em;
+    line-height: 1.5em;
+    background-color: #49111c;
+    text-align: center;
+    border-radius: 2em;
+}
+h3 {
+    font-size: 1.75em;
+    color: #f2f4f3;
+}
+h4 {
+    font-size: 1.5em;
+}
+p {
+    font-size: 1.25em;
+    line-height: 1.5em;
+    padding: .8em 0;
+}
+
+#userinterface {
+    justify-content: center;
+}
+#userinterface > h2,
+#difficulty > h2 {
+    width: calc((100% / 12 * 10) - 2em);
+}
+#userinterface > *:not(h2),
+#difficulty > *:not(h2) {
+    width: calc((100% / 12 * 8) - 2em);
+}
+img {
+    padding: .5em;
+}
+figure {
+    width: calc((100% / 12 * 6) - 2em);
+    background-color: #832232;
+    border: .25em solid #49111c;
+    text-align: center;
+}
+figure > figcaption {
+    background-color: #49111c;
+    padding: .5em;
+    font-weight: 700;
+    color: #a9927b;
+    text-align: left;
+}
+
+@media screen and (max-width: calc(56.25em)) {
+    #userinterface > * {
+        width: calc((100% / 12 * 10) - 2em);
+    }
+    #userinterface > figure {
+        width: calc((100% / 12 * 8) - 2em);
+    }
+    
+    #difficulty > * {
+        width: calc((100% / 12 * 10) - 2em);
+    }
+}
+
+@media screen and (max-width: calc(40.625em)) {
+    h1 {
+        font-size: 2.75em;
+        font-family: Roboto, sans-serif;
+    }
+    #userinterface > * {
+        width: calc((100% / 12 * 12) - 2em);
+    }
+    #userinterface > figure {
+        width: calc((100% / 12 * 10) - 2em);
+    }
+    
+    #difficulty > * {
+        width: calc((100% / 12 * 12) - 2em);
+    }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Getting started</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.75">
+        <meta property="og:title" content="Slotmachine - Getting started">
+        <meta property="og:description" content="A free slotmachine game.">
+        <meta property="og:image" content="https://robin-siegl.github.io/projects/personal/Slotmachine/Assets/meta-image.svg">
+        <meta property="og:url" content="https://robin-siegl.github.io/projects/personal/Slotmachine/">
+        <meta name="twitter:card" content="summary_large_image">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="Assets/faveicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="Assets/faveicon-16.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="Assets/icon-96.png">
+
+        <link rel="apple-touch-icon" href="Assets/touch-icon-180.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="Assets/touch-icon-152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="Assets/touch-icon-180.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="Assets/touch-icon-167.png">
+
+        <link href="https://fonts.googleapis.com/css?family=Monoton|Roboto:400,700|Righteous&display=swap" rel="stylesheet">
+        <link href="Stylesheets/gridsystem.css" rel="stylesheet">
+        <link href="Stylesheets/help.css" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <h1>Slotmachine</h1>
+            <section id="userinterface" class="container">
+                <h2>User Interface</h2>
+                <p>Here is a short description about the user interface.</p>
+                <h3>Start a new game or load a previous game:</h3>
+                <figure>
+                    <img src="Screenshots/NewGame-LoadGame.png" alt="Screenshot from 2 Buttons - New Game and Load Game">
+                    <figcaption>Screenshot - New Game and Load Game</figcaption>
+                </figure>
+                <p>If you start a new game, then you get some money and start at level 0.</p>
+                <p>If you load a previous saved game, then you get everything you had at the last game. It will load a new game if there is no saved game.</p>
+
+                <h3>Statusbar - Money:</h3>
+                <figure>
+                    <img src="Screenshots/Money.png" alt="Screenshot from in-game money">
+                    <figcaption>Screenshot - Current money</figcaption>
+                </figure>
+                <p>Here you can see your current amount of money. It automatically updates if you lose or win money.</p>
+
+                <h3>Statusbar - Level:</h3>
+                <figure>
+                    <img src="Screenshots/Level.png" alt="Screenshot from in-game level">
+                    <figcaption>Screenshot - Current Level and XP</figcaption>
+                </figure>
+                <p>If you gain XP in-game, this XP-Bar updates. After you gained enough XP you will level up. You can see your current level in the red circle.</p>
+
+                <h3>Slotdisplay:</h3>
+                <figure>
+                    <img src="Screenshots/Slotdisplay.png" alt="Screenshot from Slotdisplay">
+                    <figcaption>Screenshot - Slotdisplay</figcaption>
+                </figure>
+                <p>Here you can see the random symbols appear. If you have the same symbols, they will get highlighted.</p>
+                <figure>
+                    <img src="Screenshots/SlotdisplayWin.png" alt="Screenshot from Slotdisplay after winning">
+                    <figcaption>Screenshot - Slotdisplay after winning</figcaption>
+                </figure>
+
+                <h3>Coins per Game:</h3>
+                <figure>
+                    <img src="Screenshots/IncreaseDecreaseCoins.png" alt="Screenshot from coins per game">
+                    <figcaption>Screenshot - Increase or Decrease Coins</figcaption>
+                </figure>
+                <p>In-game you can choose the amount of coins you want to pay per game. You can increase with the "-" button or decrease with the "+" button.</p>
+                <p>The current amount will be displayed between "-" and "+" button.</p>
+                <figure>
+                    <img src="Screenshots/DecreaseCoinsLimit.png" alt="Screenshot from coins per game minimum limit">
+                    <figcaption>Screenshot - Minimum limit</figcaption>
+                </figure>
+                <p>If you reache the minimum amount of coins per game (1$), the "-" will be disabled.</p>
+                <figure>
+                    <img src="Screenshots/IncreaseCoinsLimit.png" alt="Screenshot from coins per game maximum limit">
+                    <figcaption>Screenshot - Maximum limit</figcaption>
+                </figure>
+                <p>If you reache the maximum amount of coins per game (64$), the "+" will be disabled.</p>
+
+                <h3>Difficulty:</h3>
+                <figure>
+                    <img src="Screenshots/Difficulty.png" alt="Screenshot from the difficulty button">
+                    <figcaption>Screenshot - Difficulty button</figcaption>
+                </figure>
+                <p>You can increase the difficulty by clicking on the button until it reaches 3, after this it will jump back to 1.</p>
+
+                <h3>Insert Coin:</h3>
+                <figure>
+                    <img src="Screenshots/InsertCoin.png" alt="Screenshot from the insert coin button">
+                    <figcaption>Screenshot - Insert Coin button</figcaption>
+                </figure>
+                <p>Here you start the process where the coins per game will be removed from your money and get a symbole per slotdisplay.</p>
+                <figure>
+                    <img src="Screenshots/InsertCoinLimit.png" alt="Screenshot from the insert coin button limit">
+                    <figcaption>Screenshot - Insert Coin button limit</figcaption>
+                </figure>
+                <p>The button will be disabled if you don't have enough money. You can decrease the coins per games to enable it again.</p>
+
+                <h3>Game Messages:</h3>
+                <figure>
+                    <img src="Screenshots/MessageBoxNewGame.png" alt="Screenshot from message box">
+                    <figcaption>Screenshot - Game Message-Box</figcaption>
+                </figure>
+                <p>Everything that is happening in the game is shown here.</p>
+                <figure>
+                    <img src="Screenshots/MessageBoxWin.png" alt="Screenshot from message box after you win">
+                    <figcaption>Screenshot - Game Message-Box after you win</figcaption>
+                </figure>
+                <p>This is a example about the game messages. Here you can see the amount of money you won.</p>
+
+                <h3>Save current game or load a previous game:</h3>
+                <figure>
+                    <img src="Screenshots/SaveGame-LoadGame.png" alt="Screenshot from 2 Buttons - Save Game and Load Game">
+                    <figcaption>Screenshot - Save Game and Load Game</figcaption>
+                </figure>
+                <p>On the bottom of the gamescreen you will find a save game button, to save the current game local.</p>
+                <p>You can also load a previous game. It will load a new game if there is no saved game.</p>
+            </section>
+            <section id="symbols" class="container content-x-center">
+                <h2 class="col-lg-10 col-md-12">Symbols</h2>
+                <div class="col-lg-8 container">
+                    <figure class="col-lg-4 col-md-6">
+                        <img src="Assets/Rhombus.svg" alt="Rhombus Symbol">
+                        <figcaption>Rhombus Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4 col-md-6">
+                        <img src="Assets/Heart.svg" alt="Heart Symbol">
+                        <figcaption>Heart Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4 col-md-6">
+                        <img src="Assets/BronzeCoin.svg" alt="Bronze Coin Symbol">
+                        <figcaption>Bronze Coin Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4 col-md-6">
+                        <img src="Assets/GreenCoin.svg" alt="Green Coin Symbol">
+                        <figcaption>Green Coin Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4 col-md-6">
+                        <img src="Assets/Diamond.svg" alt="Diamond Symbol">
+                        <figcaption>Diamond Symbol</figcaption>
+                    </figure>
+                </div>
+            </section>
+            <section id="lvl" class="container content-x-center">
+                <h2 class="col-lg-10 col-md-12">XP and Level</h2>
+                <p class="col-lg-8">You will gain +5 (on difficulty 1), +10 (on difficulty 2) and +15 XP (on difficulty 3) per game. After you won you will gain +10 (with 2 symbols), +20 (with 3 symbols), +30 (with 4 symbols), +50 (with 5 symbols) and +75 XP (with 6 symbols).</p>
+                <p class="col-lg-8">If your level gets higher, it will be harder to level up.</p>
+            </section>
+            <section id="difficulty" class="container content-x-center">
+                <h2>Difficulty</h2>
+                <h3>Easy - 1:</h3>
+                <p>There will only be this 3 symbols appear:</p>
+                <div class="container">
+                    <figure class="col-lg-4">
+                        <img src="Assets/Rhombus.svg" alt="Rhombus Symbol">
+                        <figcaption>Rhombus Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4">
+                        <img src="Assets/Heart.svg" alt="Heart Symbol">
+                        <figcaption>Heart Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4">
+                        <img src="Assets/BronzeCoin.svg" alt="Bronze Coin Symbol">
+                        <figcaption>Bronze Coin Symbol</figcaption>
+                    </figure>
+                </div>
+                <h3>Normal - 2:</h3>
+                <p>There will be this 4 symbols appear:</p>
+                <div class="container">
+                    <figure class="col-lg-4">
+                        <img src="Assets/Rhombus.svg" alt="Rhombus Symbol">
+                        <figcaption>Rhombus Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4">
+                        <img src="Assets/Heart.svg" alt="Heart Symbol">
+                        <figcaption>Heart Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4">
+                        <img src="Assets/BronzeCoin.svg" alt="Bronze Coin Symbol">
+                        <figcaption>Bronze Coin Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4">
+                        <img src="Assets/GreenCoin.svg" alt="Green Coin Symbol">
+                        <figcaption>Green Coin Symbol</figcaption>
+                    </figure>
+                </div>
+                <h3>Hard - 3:</h3>
+                <p>There will be all 5 symbols appear:</p>
+                <div class="container">
+                    <figure class="col-lg-4">
+                        <img src="Assets/Rhombus.svg" alt="Rhombus Symbol">
+                        <figcaption>Rhombus Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4">
+                        <img src="Assets/Heart.svg" alt="Heart Symbol">
+                        <figcaption>Heart Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4">
+                        <img src="Assets/BronzeCoin.svg" alt="Bronze Coin Symbol">
+                        <figcaption>Bronze Coin Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4">
+                        <img src="Assets/GreenCoin.svg" alt="Green Coin Symbol">
+                        <figcaption>Green Coin Symbol</figcaption>
+                    </figure>
+                    <figure class="col-lg-4">
+                        <img src="Assets/Diamond.svg" alt="Diamond Symbol">
+                        <figcaption>Diamond Symbol</figcaption>
+                    </figure>
+                </div>
+            </section>
+            <section id="rules" class="container content-x-center">
+                <h2 class="col-lg-10 col-md-12">Rules</h2>
+                <p class="col-lg-8">The symbols needs to be the same from the left slotdisplay. The game will calculate your won money from the amount of equal symbols and type of symbols.</p>
+            </section>
+        </main>
+    </body>
+</html>
