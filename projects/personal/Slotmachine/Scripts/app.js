@@ -20,9 +20,7 @@ let gameDifficulty;
 let calCoins;
 let currentGameCoins;
 let currentGameDifficulty;
-
-// Hardcode!!!
-let xpBarLvlWidth = 100;
+let xpBarLvlWidth;
 let dummyXpBarWidth;
 
 
