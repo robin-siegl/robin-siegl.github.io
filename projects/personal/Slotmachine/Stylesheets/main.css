@@ -28,8 +28,12 @@ main > div:first-child.gameStarted + div:last-child {
     border-radius: 2em;
     padding: 1.5em;
 }
-#gameMenu > div:hover {
+#gameMenu > div:hover,
+#options > div:hover {
     cursor: pointer;
+}
+#options > div:last-child:hover {
+    cursor: unset;
 }
 #gameMenu > div:nth-child(3) {
     background-color: #a9927b;
@@ -37,8 +41,6 @@ main > div:first-child.gameStarted + div:last-child {
 #options > div:last-child,
 #gameMenu > div:nth-child(4),
 #gameMenu > div:last-child {
-    background-color: #0a0908;
-} {
     background-color: #0a0908;
 }
 #gameMenu > div > p {

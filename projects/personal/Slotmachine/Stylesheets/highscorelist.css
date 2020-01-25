@@ -30,3 +30,6 @@ table > tfoot > tr > td {
     color: #f2f4f3;
     background-color: #49111c;
 }
+table > tfoot > tr > td:hover {
+    cursor: pointer;
+}

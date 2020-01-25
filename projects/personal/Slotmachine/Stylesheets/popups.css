@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#popupView {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,.8);
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 1em;
+    justify-content: center;
+    align-items: center;
+}
+#popupView h1 {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    text-align: center;
+}
+#popupView p {
+    color: #0a0908;
+    font-family: Roboto, sans-serif;
+    font-size: 1.125em;
+    line-height: 1.5em;
+    padding: .8em 0;
+    text-align: center;
+}
+.alertPopup,
+.confirmPopup,
+.promptPopup {
+    max-width: calc(71.25em / 2);
+    width: 100%;
+    background-color: #f2f4f3;
+    border-radius: 2em;
+    padding: 1.5em;
+    display: none;
+}
+.alertPopup h1{
+    color: #832232;
+}
+.confirmPopup h1 {
+    color: #ffc000;
+}
+.promptPopup {
+    color: #0a0908;
+}
+#popupView > div > div {
+    margin: 0 0 1em 0;
+}
+#popupView input[type="text"] {
+    width: 100%;
+    padding: .5em;
+    font-size: 1.125em;
+    border-radius: .25em;
+    border: .125em solid #d1d1d1;
+    background-color: #d1d1d1;
+    color: #0a0908;
+    outline: none;
+}
+#popupView input[type="text"]:focus {
+    outline: none;
+    border: .125em solid #ffc000;
+}
+#popupView input[type="submit"],
+#popupView input[type="button"] {
+    width: calc(50% - .65em);
+    margin: .25em;
+    padding: .5em;
+    font-size: 1.125em;
+    border-radius: 1em;
+    border: none;
+    background-color: #d1d1d1;
+    color: #0a0908;
+}
+#popupView input[type="submit"]:active,
+#popupView input[type="button"]:active {
+    color: #f2f4f3;
+}
+#popupView input[type="submit"]:last-child {
+    background-color: #ffc000;
+}
+#popupView .alertPopup input[type="submit"] {
+    width: 60%;
+    margin-left: 20%;
+    background-color: #d1d1d1;
+    margin: .25 auto;
+}
+#popupView input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+@keyframes showPopupBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes showPopup {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#popupView.show {
+    display: flex;
+    animation-name: showPopupBackground;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}
+.alertPopup.show,
+.confirmPopup.show,
+.promptPopup.show {
+    display: block;
+    animation-name: showPopup;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}

@@ -26,11 +26,46 @@
         <link href="Stylesheets/gridsystem.css" rel="stylesheet">
         <link href="Stylesheets/main.css" rel="stylesheet">
         <link href="Stylesheets/animation.css" rel="stylesheet">
+        <link href="Stylesheets/popups.css" rel="stylesheet">
     </head>
     <body>
         <header>
             <h1>Slotmachine</h1>
         </header>
+
+        <!-- Popup -->
+        <div id="popupView">
+            <!-- Alert Popup -->
+            <div class="alertPopup">
+                <div>
+                    <h1>Test</h1>
+                    <p>Hello World</p>
+                </div>
+                <input type="submit" value="Close"></input>
+            </div>
+
+            <!-- Confirm Popup -->
+            <div class="confirmPopup">
+                <div>
+                    <h1>Test</h1>
+                    <p>Hello World</p>
+                </div>
+                <input type="submit" value="Abort"></input>
+                <input type="submit" value="OK"></input>
+            </div>
+
+            <!-- Prompt Popup -->
+            <div class="promptPopup">
+                <div>
+                    <h1>Test</h1>
+                    <p>Hello World</p>
+                    <input type="text" name="username" placeholder="Enter Name">
+                </div>
+                <input type="submit" value="Close">
+                <input type="submit" value="OK">
+            </div>
+        </div>
+
         <main>
             <div>
                 <!-- Statusbar with Money and Lvl Info -->
@@ -152,6 +187,7 @@
             </div>
         </main>
 
+        <script src="Scripts/popups.js"></script>
         <script src="Scripts/app.js"></script>
         <script src="Scripts/gameMenu.js"></script>
     </body>

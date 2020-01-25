@@ -19,9 +19,6 @@ if (savedHighscoreList != null) {
         }
         highscore.sort(sortSecondCol);
 
-        // change lvl output
-        lvlOutput.innerText = highscore[highscore.length - 1][1];
-
         // Enable :active on mobile browser
         document.addEventListener("touchstart", function() {}, false );
 
@@ -42,8 +39,5 @@ if (savedHighscoreList != null) {
 
 // clear highscore list
 clearHighscoreList.addEventListener("click", function() {
-    if (confirm("Are you sure you want to delete the list?")) {
-        localStorage.setItem("highscore", "");
-        window.location.reload();
-    }
+    showConfirm("Are you sure?","Do you really want to delete the list?");
 });

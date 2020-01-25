@@ -156,10 +156,10 @@ slotmachine[0].addEventListener("animationend", function(e){
     // remove animation class and enable new click
     document.getElementById("slotmachine").classList.remove("animateSlotdisplays");
 
-    // wait 2 sec bevor displaying game over screen
+    // wait 1 sec bevor displaying game over screen
     setTimeout(function(){
         gameOverCheck();
-    },2000);
+    },1000);
     
 });
 
@@ -176,32 +176,36 @@ function checkPlayerMoney() {
 function gameOverCheck() {
     // if player has not enough money left -> game over
     if (playerMoney < 1) {
-        // check current highscores and add new to the list
-        let savedHighscoreList = localStorage.getItem("highscore");
-        let username = prompt("Game Over! Please enter your Username for the Highscore List:");
-        let highscore;
+        showPrompt("Game Over!","Please enter your Username for the Highscore List.");
+    }
+}
 
-        if (username == null) {
-            username = "Default";
-        }
+function addNewHighscore(defaultValue) {
+    // check current highscores and add new to the list
+    let savedHighscoreList = localStorage.getItem("highscore");
+    let username = promptPopup.children[0].children[2].value;
+    let highscore;
 
-        let playervalue = [username,playerLvl];
+    if (defaultValue || username.length < 1) {
+        username = "Default";
+    }
 
-        if (savedHighscoreList != null) {
-            if (savedHighscoreList.length > 0) {
-                highscore = JSON.parse(localStorage.getItem("highscore"));
-                highscore.push(playervalue);
-            } else {
-                highscore = [playervalue]
-            }
+    let playervalue = [username,playerLvl];
+
+    if (savedHighscoreList != null) {
+        if (savedHighscoreList.length > 0) {
+            highscore = JSON.parse(localStorage.getItem("highscore"));
+            highscore.push(playervalue);
         } else {
             highscore = [playervalue]
         }
-        localStorage.setItem("highscore", JSON.stringify(highscore));
-
-        // go to game over screen
-        window.location.href = "gameover.html";
+    } else {
+        highscore = [playervalue]
     }
+    localStorage.setItem("highscore", JSON.stringify(highscore));
+
+    // go to game over screen
+    window.location.href = "gameover.html";
 }
 
 // lvl system
@@ -293,8 +297,8 @@ function newGame() {
 function loadGame() {
     // Check if there is a savegame else start a new game
     if (localStorage.getItem("playerMoney") == null || localStorage.getItem("playerLvl") == null || localStorage.getItem("playerXp") == null || localStorage.getItem("gameCoins") == null || localStorage.getItem("gameDifficulty") == null) {
-        alert("We couldn't find a previous game! A new game will be loaded!");
         newGame();
+        showAlert("There was a Problem!", "We couldn't find a previous game! A new game will be loaded!");
     } else {
         playerMoney = parseInt(localStorage.getItem("playerMoney"));
         playerLvl = parseInt(localStorage.getItem("playerLvl"));
@@ -310,7 +314,7 @@ function loadGame() {
         decreaseButtonState();
         increaseButtonState();
         checkPlayerMoney();
-        alert("Game loaded!");
+        showAlert("Game loaded", "We loaded a previous game!");
     }
 }
 
@@ -321,7 +325,7 @@ function saveGame() {
     localStorage.setItem("playerXp", playerXp);
     localStorage.setItem("gameCoins", gameCoins);
     localStorage.setItem("gameDifficulty", gameDifficulty);
-    alert("Game saved!");
+    showAlert("Game saved", "We saved your game local!");
 }
 
 // will be called when player presses the button "insert coin"
