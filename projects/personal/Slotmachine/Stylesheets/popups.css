@@ -66,6 +66,7 @@
     background-color: #d1d1d1;
     color: #0a0908;
     outline: none;
+    -webkit-appearance: none;
 }
 #popupView input[type="text"]:focus {
     outline: none;
@@ -81,6 +82,7 @@
     border: none;
     background-color: #d1d1d1;
     color: #0a0908;
+    -webkit-appearance: none;
 }
 #popupView input[type="submit"]:active,
 #popupView input[type="button"]:active {
