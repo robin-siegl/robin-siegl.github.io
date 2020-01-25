@@ -1,6 +1,6 @@
 body, html {
-    background-color: #832232;
-    margin: 4em 0;
+    background-color: #f2f4f3;
+    margin: 2em 0 4em;
 }
 h1 {
     text-align: center;
@@ -14,15 +14,16 @@ h2, h3, h4, p, figcaption {
     color: #0a0908;
 }
 h2 {
-    font-size: 2.25em;
+    font-size: 2.5em;
     line-height: 1.5em;
-    background-color: #49111c;
-    text-align: center;
-    border-radius: 2em;
+    border-bottom: .25em solid #0a0908;
 }
 h3 {
-    font-size: 1.75em;
-    color: #f2f4f3;
+    font-size: 2em;
+    line-height: 1.75em;
+    color: #0a0908;
+    border-top: .25em solid #0a0908;
+    border-bottom: .25em solid #0a0908;
 }
 h4 {
     font-size: 1.5em;
@@ -33,44 +34,50 @@ p {
     padding: .8em 0;
 }
 
-#userinterface {
-    justify-content: center;
+#userinterface,
+#symbols,
+#lvl,
+#difficulty,
+#rules {
+    justify-content: flex-end;
 }
 #userinterface > h2,
 #difficulty > h2 {
-    width: calc((100% / 12 * 10) - 2em);
+    width: calc((100% / 12 * 12) - 2em);
 }
 #userinterface > *:not(h2),
 #difficulty > *:not(h2) {
-    width: calc((100% / 12 * 8) - 2em);
+    width: calc((100% / 12 * 10) - 2em);
+}
+#userinterface > h3,
+#difficulty > h3 {
+    width: calc((100% / 12 * 11) - 2em);
 }
 img {
     padding: .5em;
 }
 figure {
-    width: calc((100% / 12 * 6) - 2em);
     background-color: #832232;
     border: .25em solid #49111c;
-    text-align: center;
 }
 figure > figcaption {
     background-color: #49111c;
     padding: .5em;
     font-weight: 700;
-    color: #a9927b;
+    color: #f2f4f3;
     text-align: left;
 }
 
 @media screen and (max-width: calc(56.25em)) {
     #userinterface > * {
-        width: calc((100% / 12 * 10) - 2em);
+        width: calc((100% / 12 * 12) - 2em);
     }
     #userinterface > figure {
-        width: calc((100% / 12 * 8) - 2em);
+        width: calc((100% / 12 * 10) - 2em);
     }
     
     #difficulty > * {
-        width: calc((100% / 12 * 10) - 2em);
+        width: calc((100% / 12 * 12) - 2em);
     }
 }
 

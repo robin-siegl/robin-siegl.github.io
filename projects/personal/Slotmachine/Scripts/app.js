@@ -7,7 +7,8 @@ let interaction = document.getElementById("interaction").children;              
 let gameMessage = document.getElementById("gameMessage").children[0].children[0];                   // Output current game messages
 const assetsArray = ["Assets/Rhombus.svg","Assets/Heart.svg","Assets/BronzeCoin.svg","Assets/GreenCoin.svg","Assets/Diamond.svg"];
 const loadingArray = ["Assets/letter-C.svg","Assets/letter-A.svg","Assets/letter-S.svg","Assets/letter-I.svg","Assets/letter-N.svg","Assets/letter-O.svg"];
-const hostPath = window.location.href;                                                              // Path to the assets folder -> root path
+let hostPath = window.location.href;                                                                // Path to the assets folder -> root path
+hostPath = hostPath.substring(0, hostPath.lastIndexOf("/") + 1);                                    // remove index.html
 let gameState = false;                                                                              // False = No interaction made | True = Insertcoin clicked
 let options = document.getElementById("options").children;                                          // Array with ineractions | 0 save game - 1 load game - 2 help - 3 version
 
@@ -154,6 +155,12 @@ slotmachine[0].addEventListener("animationend", function(e){
 
     // remove animation class and enable new click
     document.getElementById("slotmachine").classList.remove("animateSlotdisplays");
+
+    // wait 2 sec bevor displaying game over screen
+    setTimeout(function(){
+        gameOverCheck();
+    },2000);
+    
 });
 
 // check if player has enough money
@@ -162,6 +169,38 @@ function checkPlayerMoney() {
         interaction[4].classList.add("buttonDisabled");
     } else if (gameCoins <= playerMoney && interaction[4].classList.contains("buttonDisabled")) {
         interaction[4].classList.remove("buttonDisabled");
+    }
+}
+
+// check if player has money left
+function gameOverCheck() {
+    // if player has not enough money left -> game over
+    if (playerMoney < 1) {
+        // check current highscores and add new to the list
+        let savedHighscoreList = localStorage.getItem("highscore");
+        let username = prompt("Game Over! Please enter your Username for the Highscore List:");
+        let highscore;
+
+        if (username == null) {
+            username = "Default";
+        }
+
+        let playervalue = [username,playerLvl];
+
+        if (savedHighscoreList != null) {
+            if (savedHighscoreList.length > 0) {
+                highscore = JSON.parse(localStorage.getItem("highscore"));
+                highscore.push(playervalue);
+            } else {
+                highscore = [playervalue]
+            }
+        } else {
+            highscore = [playervalue]
+        }
+        localStorage.setItem("highscore", JSON.stringify(highscore));
+
+        // go to game over screen
+        window.location.href = "gameover.html";
     }
 }
 
@@ -367,7 +406,7 @@ function calculateCoins() {
                 calCoins = calCoins * 2;
                 break;
             case hostPath + assetsArray[3]:
-                calCoins = calCoins * 2.75;
+                calCoins = calCoins * 2.5;
                 break;
             case hostPath + assetsArray[4]:
                 calCoins = calCoins * 3.75;
@@ -394,7 +433,6 @@ function calculateCoins() {
         // change gameState to false
         gameState = false;
     }
-    
 }
 
 // check for the same icons - if > 0 - highlight slot display and retuen value
@@ -430,5 +468,3 @@ function won() {
         slotContainer.classList.remove("winAnimation");
     }, 500);
 }
-
-newGame();

@@ -1,0 +1,60 @@
+body, html {
+    background-color: #832232;
+}
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: Monoton, sans-serif;
+    font-size: 4em;
+    color: #0a0908;
+}
+h2 {
+    font-family: Roboto, sans-serif;
+    font-size: 2em;
+    line-height: 1.5em;
+    padding: 1em;
+    color: #0a0908;
+    text-align: center;
+}
+main > div:first-child > div {
+    width: 3em;
+    height: 3em;
+    margin: .25em auto;
+    background-color: #ffc000;
+    border-radius: 100%;
+    padding: 1em 0;
+    font-size: 3em;
+    text-align: center;
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+    color: #0a0908;
+}
+main > div:nth-child(3) {
+    margin: 4em 0;
+    text-align: center;
+    background-color: #49111c;
+    border-radius: 1.5em;
+    line-height: 3.25em;
+    color: #f2f4f3;
+    font-family: Roboto, sans-serif;
+    font-size: 1.5em;
+    transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+main > div:nth-child(3):hover {
+    cursor: pointer;
+}
+main > div:nth-child(3):active,
+main > div:nth-child(3):focus {
+    transform: scale(.8);
+}
+
+@media screen and (max-width: calc(40.625em)) {
+    h1 {
+        font-size: 3em;
+    }
+}

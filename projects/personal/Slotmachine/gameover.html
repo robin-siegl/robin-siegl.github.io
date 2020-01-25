@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Game Over</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.75">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="Assets/faveicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="Assets/faveicon-16.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="Assets/icon-96.png">
+
+        <link href="https://fonts.googleapis.com/css?family=Monoton|Roboto:400,700|Righteous&display=swap" rel="stylesheet">
+        <link href="Stylesheets/gridsystem.css" rel="stylesheet">
+        <link href="Stylesheets/gameover.css" rel="stylesheet">
+        <link href="Stylesheets/highscorelist.css" rel="stylesheet">
+    </head>
+    <body>
+        <main class="container content-x-center">
+            <div class="col-lg-12">
+                <h1>Game Over</h1>
+                <h2>You reached Level:</h2>
+                <div id="lvlOutput">
+                    -
+                </div>
+                <h2>Highscore List:</h2>
+            </div>
+            <table class="col-lg-10 col-md-12">
+                <thead>
+                    <tr>
+                        <th>Nr</th>
+                        <th>Name</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Clear List</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div id="restartGame" class="col-lg-12">Restart Game</div>
+        </main>
+
+        <script src="Scripts/highscorelist.js"></script>
+        <script>
+        let restartGame = document.getElementById("restartGame");
+        let lvlOutput = document.getElementById("lvlOutput");
+
+        // restart game
+        restartGame.addEventListener("click", function() {
+            window.location.replace("index.html");
+        });
+        </script>
+    </body>
+</html>

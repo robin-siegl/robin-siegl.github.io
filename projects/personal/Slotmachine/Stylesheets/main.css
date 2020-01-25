@@ -28,9 +28,18 @@ main > div:first-child.gameStarted + div:last-child {
     border-radius: 2em;
     padding: 1.5em;
 }
-#gameMenu > div:nth-child(3),
-#gameMenu > div:last-child {
+#gameMenu > div:hover {
+    cursor: pointer;
+}
+#gameMenu > div:nth-child(3) {
     background-color: #a9927b;
+}
+#options > div:last-child,
+#gameMenu > div:nth-child(4),
+#gameMenu > div:last-child {
+    background-color: #0a0908;
+} {
+    background-color: #0a0908;
 }
 #gameMenu > div > p {
     color: #f2f4f3;
@@ -69,6 +78,17 @@ p {
     background-color: #49111c;
     border-radius: 2em;
     color: #f2f4f3;
+}
+#statusbar > div:first-child > div:first-child {
+    width: 2.667em;
+    height: 2.667em;
+}
+#statusbar > div:first-child > div:last-child {
+    width: calc(100%-2.5em);
+    margin-left: 2.5em;
+}
+#statusbar > div:last-child > div:last-child {
+    width: 65%;
 }
 #statusbar > div:last-child > div:first-child {
     width: 2.667em;
@@ -204,10 +224,6 @@ main > div:last-child > div > div {
     font-family: Roboto, sans-serif;
     padding: 1em;
 }
-#options > div:last-child,
-#gameMenu > div:last-child {
-    background-color: #0a0908;
-}
 
 @media screen and (max-width: calc(56.25em)) {
     #slotmachine > div {
@@ -222,6 +238,9 @@ main > div:last-child > div > div {
     h1 {
         font-size: 2.75em;
         font-family: Roboto, sans-serif;
+    }
+    #statusbar > div:last-child > div:last-child {
+        width: 55%;
     }
     #slotmachine > div {
         background-color: #f2f4f3;

@@ -12,7 +12,12 @@ buttons[1].addEventListener("click", function(){
     loadGame();
 });
 
-// open help page
+// load existing game if there is no save game > start a new
 buttons[2].addEventListener("click", function(){
+    window.location.href = "highscore.html";
+});
+
+// open help page
+buttons[3].addEventListener("click", function(){
     window.open("help.html", '_blank');
 });

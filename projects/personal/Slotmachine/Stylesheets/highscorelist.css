@@ -1,0 +1,32 @@
+table {
+    font-size: 1.5em;
+    font-family: Roboto, sans-serif;
+    background-color: #f2f4f3;
+}
+table > thead > tr {
+    background-color: #a9927b;
+    color: #0a0908;
+}
+table > tbody > tr:nth-child(even) {
+    background-color: #d1d1d1;
+}
+table > tbody > tr:hover {
+    background-color: #ffc000;
+    cursor: pointer;
+}
+table th {
+    font-weight: 700;
+    font-size: 1.25em;
+    padding: .25em 0;
+}
+table > tbody > tr > td {
+    text-align: center;
+    padding: .25em 0;
+}
+table > tfoot > tr > td {
+    padding: .5em;
+    font-size: .8em;
+    text-align: center;
+    color: #f2f4f3;
+    background-color: #49111c;
+}
