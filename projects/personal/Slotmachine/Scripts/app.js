@@ -142,6 +142,9 @@ interaction[4].addEventListener("click", function(){
 
 slotmachine[0].addEventListener("animationend", function(e){
 
+    // remove animation class and enable new click
+    document.getElementById("slotmachine").classList.remove("animateSlotdisplays");
+
     // display random icons on slot display
     if (e.target.localName == "img") {
         for (i = 0; i < slotmachine.length; i++) {
@@ -152,14 +155,6 @@ slotmachine[0].addEventListener("animationend", function(e){
 
     // check icons and calcualte coins
     calculateCoins();
-
-    // remove animation class and enable new click
-    document.getElementById("slotmachine").classList.remove("animateSlotdisplays");
-
-    // wait 1 sec bevor displaying game over screen
-    setTimeout(function(){
-        gameOverCheck();
-    },1000);
     
 });
 
@@ -176,14 +171,14 @@ function checkPlayerMoney() {
 function gameOverCheck() {
     // if player has not enough money left -> game over
     if (playerMoney < 1) {
-        showPrompt("Game Over!","Please enter your Username for the Highscore List.");
+        showPrompt(1,"Game Over!","Please enter your Username for the Highscore List.");
     }
 }
 
 function addNewHighscore(defaultValue) {
     // check current highscores and add new to the list
     let savedHighscoreList = localStorage.getItem("highscore");
-    let username = promptPopup.children[0].children[2].value;
+    let username = popupViewController.children[0].children[0].children[1].children[0].value;
     let highscore;
 
     if (defaultValue || username.length < 1) {
@@ -298,7 +293,7 @@ function loadGame() {
     // Check if there is a savegame else start a new game
     if (localStorage.getItem("playerMoney") == null || localStorage.getItem("playerLvl") == null || localStorage.getItem("playerXp") == null || localStorage.getItem("gameCoins") == null || localStorage.getItem("gameDifficulty") == null) {
         newGame();
-        showAlert("There was a Problem!", "We couldn't find a previous game! A new game will be loaded!");
+        showAlert(1,"There was a Problem!", "We couldn't find a previous game! A new game will be loaded!");
     } else {
         playerMoney = parseInt(localStorage.getItem("playerMoney"));
         playerLvl = parseInt(localStorage.getItem("playerLvl"));
@@ -314,7 +309,7 @@ function loadGame() {
         decreaseButtonState();
         increaseButtonState();
         checkPlayerMoney();
-        showAlert("Game loaded", "We loaded a previous game!");
+        showAlert(1,"Game loaded", "We loaded a previous game!");
     }
 }
 
@@ -325,7 +320,7 @@ function saveGame() {
     localStorage.setItem("playerXp", playerXp);
     localStorage.setItem("gameCoins", gameCoins);
     localStorage.setItem("gameDifficulty", gameDifficulty);
-    showAlert("Game saved", "We saved your game local!");
+    showAlert(1,"Game saved", "We saved your game local!");
 }
 
 // will be called when player presses the button "insert coin"
@@ -437,6 +432,12 @@ function calculateCoins() {
         // change gameState to false
         gameState = false;
     }
+    
+
+    // wait 1 sec bevor displaying game over screen
+    setTimeout(function(){
+        gameOverCheck();
+    },1000);
 }
 
 // check for the same icons - if > 0 - highlight slot display and retuen value

@@ -39,5 +39,5 @@ if (savedHighscoreList != null) {
 
 // clear highscore list
 clearHighscoreList.addEventListener("click", function() {
-    showConfirm("Are you sure?","Do you really want to delete the list?");
+    showConfirm(1,"Are you sure?","Do you really want to delete the list?");
 });

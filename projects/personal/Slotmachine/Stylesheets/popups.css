@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 
-
-#popupView {
+#popupViewController > div {
     height: 100vh;
     width: 100vw;
     background-color: rgba(0,0,0,.8);
@@ -13,21 +12,24 @@
     z-index: 5;
     top: 0;
     left: 0;
-    display: none;
-    flex-direction: row;
-    flex-wrap: nowrap;
     margin: 0;
     padding: 1em;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    display: flex;
+    animation-name: showPopupBackground;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
 }
-#popupView h1 {
+#popupViewController h1 {
     font-family: Roboto, sans-serif;
     font-weight: 700;
     font-size: 2em;
     text-align: center;
 }
-#popupView p {
+#popupViewController p {
     color: #0a0908;
     font-family: Roboto, sans-serif;
     font-size: 1.125em;
@@ -43,21 +45,22 @@
     background-color: #f2f4f3;
     border-radius: 2em;
     padding: 1.5em;
-    display: none;
+    display: block;
+    animation-name: showPopup;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
 }
 .alertPopup h1{
     color: #832232;
 }
-.confirmPopup h1 {
-    color: #ffc000;
-}
+.confirmPopup,
 .promptPopup {
     color: #0a0908;
 }
 #popupView > div > div {
-    margin: 0 0 1em 0;
+    margin: 0 0 .5em 0;
 }
-#popupView input[type="text"] {
+#popupViewController input[type="text"] {
     width: 100%;
     padding: .5em;
     font-size: 1.125em;
@@ -67,14 +70,14 @@
     color: #0a0908;
     outline: none;
     -webkit-appearance: none;
+    margin: 0 0 .5em 0;
 }
-#popupView input[type="text"]:focus {
-    outline: none;
+#popupViewController input[type="text"]:focus {
     border: .125em solid #ffc000;
 }
-#popupView input[type="submit"],
-#popupView input[type="button"] {
-    width: calc(50% - .65em);
+#popupViewController input[type="submit"],
+#popupViewController input[type="button"] {
+    width: calc(50% - .62em);
     margin: .25em;
     padding: .5em;
     font-size: 1.125em;
@@ -84,20 +87,23 @@
     color: #0a0908;
     -webkit-appearance: none;
 }
-#popupView input[type="submit"]:active,
-#popupView input[type="button"]:active {
+#popupViewController input[type="submit"]:active,
+#popupViewController input[type="button"]:active {
     color: #f2f4f3;
 }
-#popupView input[type="submit"]:last-child {
+#popupViewController input[type="submit"]:last-child,
+#popupViewController input[type="button"]:last-child {
     background-color: #ffc000;
 }
-#popupView .alertPopup input[type="submit"] {
+#popupViewController .alertPopup input[type="submit"],
+#popupViewController .alertPopup input[type="button"] {
     width: 60%;
     margin-left: 20%;
     background-color: #d1d1d1;
     margin: .25 auto;
 }
-#popupView input[type="submit"]:hover {
+#popupViewController input[type="submit"]:hover,
+#popupViewController input[type="button"]:hover {
     cursor: pointer;
 }
 
@@ -116,19 +122,4 @@
     100% {
         transform: scale(1);
     }
-}
-
-#popupView.show {
-    display: flex;
-    animation-name: showPopupBackground;
-    animation-duration: .5s;
-    animation-iteration-count: 1;
-}
-.alertPopup.show,
-.confirmPopup.show,
-.promptPopup.show {
-    display: block;
-    animation-name: showPopup;
-    animation-duration: .5s;
-    animation-iteration-count: 1;
 }
