@@ -65,7 +65,7 @@ main > div > div > div {
     width: 100%;
 }
 main > div > div > div > div {
-    background: linear-gradient(135deg, #00801C, #009C56 100%);
+    background: linear-gradient(135deg, #009C56, #00801C 100%);
     border-radius: .5em;
     padding: .5em;
     color: #F3F9FF;
@@ -76,7 +76,7 @@ main > div > div > div > div {
     transition: opacity .2s ease-in-out;
 }
 main > div > div > div > div:last-child {
-    background: linear-gradient(135deg, #540E29, #87172F 100%);
+    background: linear-gradient(135deg, #87172F, #540E29 100%);
 }
 main > div > div > div > div:hover {
     cursor: pointer;
@@ -139,6 +139,7 @@ form {
 li:not(.input-item) {
     border: .125em solid #BECBD8;
     background-color: #BECBD8;
+    color: #151518;
     margin: .25em;
     padding: .5em;
     border-radius: .25em;
@@ -156,13 +157,13 @@ li:hover {
 li input[type="text"] {
     width: 100%;
     font-size: 1em;
-    padding: .5em;
+    padding: .55em;
     margin: .25em 0;
     border-radius: .25em;
     background-color: #F3F9FF;
     border: .125em solid #BECBD8;
     outline: none;
-    color: #212121;
+    color: #151518;
     -webkit-appearance: none;
 }
 li input[type="text"]:focus {
@@ -171,10 +172,10 @@ li input[type="text"]:focus {
 li input[type="submit"] {
     font-size: 1em;
     font-weight: 700;
-    padding: .75em .75em;
+    padding: .75em;
     margin: .25em 0 .25em .25em;
     border-radius: .25em;
-    background: linear-gradient(135deg, #00017F, #006699 135%);
+    background: linear-gradient(135deg, #006699, #00017F 135%);
     border: none;
     outline: none;
     color: #F3F9FF;
@@ -195,6 +196,42 @@ li.done {
     font-weight: 400;
     opacity: .5;
 }
+
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: #1A1B1E;
+    }
+    h1 {
+        color: #006699;
+    }
+    main > div > div {
+        background-color: #1A1B1E;
+        box-shadow: -.5em -.5em 1em #242529,
+                    .5em .5em 1em #151518;
+    }
+    main > div > div > div > div {
+        color: #DEEAF6;
+    }
+    div.messageBox {
+        background-color: #2e3e4e;
+        color: #DEEAF6;
+    }
+    li:not(.input-item) {
+        border: .125em solid #151518;
+        background-color: #151518;
+        color: rgb(194, 197, 201);
+    }
+    li input[type="text"] {
+        background-color: #242529;
+        border: .125em solid #151518;
+        color: #DEEAF6;
+    }
+    li input[type="submit"] {
+        color: #F3F9FF;
+    }
+}
+
+
 
 @media screen and (max-width: calc(40.625em)) {
     main > div {
