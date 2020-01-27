@@ -1,95 +1,80 @@
 let itemContainer = document.getElementById("item-container");
 let formContainer = document.getElementsByTagName("form")[0];
+let listTitle = document.getElementById("list-title");
+let cleanListButton = document.getElementById("clean-list");
+let contentContainer = document.getElementById("container");
+let messageBoxContainer = document.getElementById("messageBox-container");
+let userLists = [[1, "Tasks"]];
+let standardList = [["Milk", ""], ["Bread", "done"], ["Water", ""], ["Tea", ""]];
 
 loadListPreviousList();
 
 // enable active state on mobile browser
 document.addEventListener("touchstart", function() {}, false);
 
-//JSON.parse(localStorage.getItem("highscore"))
-//JSON.stringify()
+// check for a prev list and load it
 function loadListPreviousList() {
-    let loadedList = JSON.parse(localStorage.getItem("toDo-list1"));
+    let loadedList = JSON.parse(localStorage.getItem("toDo-list" + userLists[0][0]));
+    let infoMessage = "List loaded!";
 
-    if (loadedList != null) {
-        for (i = 0; i < loadedList.length; i++) {
-            let listItems = itemContainer.children;
-            let newItem = document.createElement("li");
-            newItem.innerText = loadedList[i][0];
+    if (loadedList == null) {
+        loadedList = standardList;
+        infoMessage = "Welcome User!"
+    }
 
-            if (loadedList[i][1] > 0) {
-                newItem.classList.add(loadedList[i][1]);
-            }
+    listTitle.innerText = userLists[0][1];
+    
+    for (i = 0; i < loadedList.length; i++) {
+        let listItems = itemContainer.children;
+        let newItem = document.createElement("li");
+        newItem.innerText = loadedList[i][0];
 
-            itemContainer.insertBefore(newItem, listItems[listItems.length-1]);
-            
+        if (loadedList[i][1].length > 0) {
+            newItem.classList.add(loadedList[i][1]);
         }
 
-        showMessage("Previous List loaded!");
+        itemContainer.insertBefore(newItem, listItems[listItems.length-1]);
+        
     }
+
+    showMessage(infoMessage);
+
+    setTimeout(function() {
+        hideMessage();
+    }, 3000);
 }
 
 // hide popup message
 function hideMessage() {
-    let i = 0;
-    while (i < document.getElementsByClassName("messageBox").length) {
-        itemContainer.parentElement.removeChild(document.getElementsByClassName("messageBox")[i]);
+    if(messageBoxContainer.children.length > 0) {
+        messageBoxContainer.children[0].classList.add("hideBox");
+
+        setTimeout(function() {
+            messageBoxContainer.removeChild(document.getElementsByClassName("messageBox")[0]);
+        }, 200);
     }
+    
 }
 
 // show popup message
 function showMessage(message) {
     // Only display 1 messagebox -> remove other message boxes
-    if (document.getElementsByClassName("messageBox").length > 0) {
+    if (messageBoxContainer.children.length > 0) {
         hideMessage();
     }
 
-    // create new message box
-    let messageBox = document.createElement("div");
-    messageBox.innerHTML = "<p>" + message + "</p>";
-    messageBox.classList.add("messageBox");
-    itemContainer.parentElement.insertBefore(messageBox, itemContainer);
+    // create new message box after waiting .2 seconds
+    setTimeout(function() {
+        let messageBox = document.createElement("div");
+        messageBox.innerHTML = "<p>" + message + "</p>";
+        messageBox.classList.add("messageBox");
+        messageBoxContainer.appendChild(messageBox);
+    },200);
 
 }
 
-formContainer.addEventListener("submit", function(event) {
-
-    // prevent default behavior
-    event.preventDefault();
-
-    hideMessage();
-
-    // get content from inputfield
-    let listInput = formContainer.children[0].value;
-
-    // Only create new Listitem when the value attribute is not empty
-    if (listInput.length > 0) {
-        let listItems = itemContainer.children;
-        let newItem = document.createElement("li");
-        newItem.innerText = listInput;
-        itemContainer.insertBefore(newItem, listItems[listItems.length - 1]);
-        formContainer.children[0].value = "";
-    }
-
-})
-itemContainer.addEventListener("click", function(event) {
-
-    if (event.target.localName == "li" && !event.target.classList.contains("input-item")) {
-        if (event.target.classList.contains("done")) {
-            event.target.classList.remove("done");
-        } else {
-            event.target.classList.add("done");
-        }
-    }
-
-});
-itemContainer.parentElement.parentElement.addEventListener("click", function(event) {
-    // Only display 1 messagebox -> remove other message boxes
-    if (event.target.classList == "messageBox") {
-        hideMessage();
-    }
-});
-itemContainer.parentElement.children[0].children[1].addEventListener("click", function(event) {
+// save list
+function saveList() {
     let dummyArray = new Array();
     let listItems = itemContainer.children;
     let newTask;
@@ -106,11 +91,45 @@ itemContainer.parentElement.children[0].children[1].addEventListener("click", fu
         dummyArray.push([newTask, newTaskStatus]);
     }
 
-    localStorage.setItem("toDo-list1", JSON.stringify(dummyArray));
+    localStorage.setItem("toDo-list" + userLists[0][0], JSON.stringify(dummyArray));
+}
 
-    showMessage("List saved locally!");
+formContainer.addEventListener("submit", function(event) {
+
+    // prevent default behavior
+    event.preventDefault();
+
+    // get content from inputfield
+    let listInput = formContainer.children[0].value;
+
+    // Only create new Listitem when the value attribute is not empty
+    if (listInput.length > 0) {
+        let listItems = itemContainer.children;
+        let newItem = document.createElement("li");
+        newItem.innerText = listInput;
+        itemContainer.insertBefore(newItem, listItems[listItems.length - 1]);
+        formContainer.children[0].value = "";
+        saveList();
+    }
+
+})
+
+// content container eventlistener
+contentContainer.addEventListener("click", function(event) {
+
+    // add or remove "done" mark
+    if (event.target.localName == "li" && !event.target.classList.contains("input-item")) {
+        if (event.target.classList.contains("done")) {
+            event.target.classList.remove("done");
+        } else {
+            event.target.classList.add("done");
+        }
+        saveList();
+    }
 });
-itemContainer.parentElement.children[0].children[2].addEventListener("click", function(event) {
+
+// clean list eventlistener
+cleanListButton.addEventListener("click", function(event) {
     let listItems = itemContainer.children;
     let i = 0;
     let counter = 0;
@@ -122,6 +141,16 @@ itemContainer.parentElement.children[0].children[2].addEventListener("click", fu
             i++;
         }
     }
+    saveList();
 
-    showMessage("Deleted " + counter + " Items!");
+    // "Item" and "Items" checker
+    if (counter == 1) {
+        showMessage("Deleted " + counter + " Item!");
+    } else {
+        showMessage("Deleted " + counter + " Items!");
+    }
+    
+    setTimeout(function() {
+        hideMessage();
+    }, 3000);
 });

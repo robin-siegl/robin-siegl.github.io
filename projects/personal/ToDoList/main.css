@@ -6,6 +6,14 @@
         transform: scale(1);
     }
 }
+@keyframes messageBoxHide {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1,0);
+    }
+}
 @keyframes buttonPressed {
     0% {
         transform: scale(1);
@@ -21,8 +29,8 @@
     0% {
         transform: scale(0);
     }
-    50% {
-        transform: scale(1.05);
+    70% {
+        transform: scale(1.025);
     }
     100% {
         transform: scale(1);
@@ -57,15 +65,20 @@ main > div {
     padding: 2em;
     box-sizing: border-box;
 }
-main > div > div > div {
+#status {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     width: 100%;
+    position: relative;
 }
-main > div > div > div > div {
-    background: linear-gradient(135deg, #009C56, #00801C 100%);
+#status > form {
+    padding: 0;
+    margin: 0;
+}
+#status > div {
+    background: linear-gradient(135deg, #87172F, #540E29 100%);
     border-radius: .5em;
     padding: .5em;
     color: #F3F9FF;
@@ -75,16 +88,17 @@ main > div > div > div > div {
     font-size: 1.125em;
     transition: opacity .2s ease-in-out;
 }
-main > div > div > div > div:last-child {
-    background: linear-gradient(135deg, #87172F, #540E29 100%);
-}
-main > div > div > div > div:hover {
+#status > div:hover {
     cursor: pointer;
     opacity: .8;
 }
-main > div > div > div > div:active {
+#status > div:active {
     animation-name: buttonPressed;
     animation-duration: .4s;
+}
+#messageBox-container {
+    width: 100%;
+    height: 2em;
 }
 div.messageBox {
     background-color: #344659;
@@ -95,6 +109,10 @@ div.messageBox {
     animation-duration: .4s;
     transform-origin: top;
     margin: 1em 0 0 0;
+}
+div.messageBox.hideBox {
+    animation-name: messageBoxHide;
+    animation-duration: .2s;
 }
 div.messageBox > p {
     font-weight: 700;
@@ -209,7 +227,7 @@ li.done {
         box-shadow: -.5em -.5em 1em #242529,
                     .5em .5em 1em #151518;
     }
-    main > div > div > div > div {
+    #status > div {
         color: #DEEAF6;
     }
     div.messageBox {
