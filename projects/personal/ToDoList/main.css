@@ -27,7 +27,7 @@
 }
 @keyframes newListItem {
     0% {
-        transform: scale(.75);
+        transform: scale(.95);
     }
     70% {
         transform: scale(1.025);
@@ -41,10 +41,10 @@
         transform: scale(1);
     }
     70% {
-        transform: scale(.975);
+        transform: scale(.95);
     }
     100% {
-        transform: scale(1);
+        transform: scale(.975);
     }
 }
 
@@ -169,7 +169,7 @@ li:not(.input-item) {
     border: .125em solid #BECBD8;
     background-color: #BECBD8;
     color: #151518;
-    margin: .25em;
+    margin: .25em 0;
     padding: .5em;
     border-radius: .25em;
     font-weight: 700;
@@ -226,6 +226,7 @@ li.done {
     opacity: .5;
     animation-name: done;
     animation-duration: .4s;
+    transform: scale(.975);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -258,6 +259,7 @@ li.done {
         color: #DEEAF6;
     }
     li input[type="submit"] {
+        background: linear-gradient(135deg, hsl(208, 26%, 35%), hsl(208, 36%, 35%) 135%);
         color: #F3F9FF;
     }
 }
