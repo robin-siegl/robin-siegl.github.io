@@ -200,7 +200,7 @@ function addNewHighscore(defaultValue) {
     localStorage.setItem("highscore", JSON.stringify(highscore));
 
     // go to game over screen
-    window.location.href = "gameover.html";
+    window.location.assign("gameover.html");
 }
 
 // lvl system
