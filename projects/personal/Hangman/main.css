@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Modern Antiqua', cursive;
     color: #353F40;
 }
-p, li, div, a {
+p, li, div, a, label {
     font-family: 'Roboto', sans-serif;
 }
 svg {
@@ -19,7 +19,7 @@ svg {
     height: 70%;
 }
 header h1{
-    font-size: 3em;
+    font-size: 4em;
     text-align: center;
     padding: 1em;
 }
@@ -28,9 +28,58 @@ main {
     max-width: 54em;
     padding: 1em;
 }
-#controls-container {
-    display: none;
+
+/*
+CONTROLS CONTAINER
+*/
+
+#controls-container h2 {
+    font-size: 3em;
+    text-align: center;
+    padding: 0 0 1em 0;
 }
+#controls-container > div {
+    padding: 1em;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#controls-container > div > div {
+    font-size: 1.125em;
+    width: 30%;
+    text-align: center;
+    margin: .5em;
+    padding: 0;
+    border-radius: 1em;
+    transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+#controls-container > div:last-child > div:first-child {
+    background-color: hsl(0, 0%, 80%);
+}
+#controls-container > div:last-child > div:last-child {
+    background-color: hsl(0, 0%, 50%);
+}
+#controls-container > div:first-child > div {
+    background-color: #353F40;
+    color: #F2F2F2;
+    width: 50%;
+}
+#controls-container > div > div > p {
+    padding: 1em;
+    margin: 0;
+}
+
+div.displayNone {
+    display: none !important;
+}
+
+/*
+GAME CONTAINER
+*/
+
 #game-container > div {
     display: flex;
     flex-direction: row;
@@ -69,15 +118,17 @@ main {
     box-shadow: 0 0 .4em 0 hsl(0, 0%, 65%),
                 0 0 .6em 0 hsl(0, 0%, 85%);
 }
-#game-container > div:nth-child(3) > div:hover {
+#game-container > div:nth-child(3) > div:hover,
+#controls-container > div > div:hover {
     opacity: .9;
     cursor: pointer;
     transform: scale(1.05);
     box-shadow: 0 0 .4em 0 hsl(0, 0%, 60%),
                 0 0 .7em 0 hsl(0, 0%, 75%);
 }
-#game-container > div:nth-child(3) > div:active {
-    transform: scale(.9);
+#game-container > div:nth-child(3) > div:active,
+#controls-container > div > div:active {
+    transform: scale(.95);
     box-shadow: 0 0 .2em 0 hsl(0, 0%, 60%),
                 0 0 .4em 0 hsl(0, 0%, 75%);
 }
@@ -99,7 +150,8 @@ main {
 }
 #game-container > div:nth-child(2) > div:first-child,
 #game-container > div:nth-child(2) > div.charFound,
-#game-container > div:nth-child(3) > div {
+#game-container > div:nth-child(3) > div,
+#controls-container > div > div {
     background-color: #A6A6A6;
     color: #232526;
     box-shadow: 0 0 .3em 0 hsl(0, 0%, 65%),
@@ -143,8 +195,18 @@ main {
 }
 
 @media screen and (max-width: 40em) {
+    header h1{
+        font-size: 2.5em;
+    }
     svg {
         width: 100%;
         height: 100%;
+    }
+    #game-container > div:last-child {
+        padding: 1em;
+    }
+    #controls-container > div:first-child > div,
+    #controls-container > div > div {
+        width: 100%;
     }
 }
