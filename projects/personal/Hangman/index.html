@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hangman Game</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.75">
+
+        <link href="https://fonts.googleapis.com/css?family=Modern+Antiqua|Roboto:400,700&display=swap" rel="stylesheet">
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <header>
+        <h1>Hangman Game</h1>
+    </header>
+    <main>
+        <div id="controls-container">
+            <h2>Start a new Game</h2>
+            <form>
+                <label for="difficulty">Choose difficulty:</label>
+                <fieldset>
+                    <input type="radio" name="difficulty" required><p>Easy</p>
+                    <input type="radio" name="difficulty" required><p>Medium</p>
+                    <input type="radio" name="difficulty" required><p>Hard</p>
+                </fieldset>
+                <input type="submit" value="Start Game">
+            </form>
+        </div>
+        <div id="game-container">
+            <!-- Hangman Animation Container -->
+            <div>
+                <svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                    <g transform="matrix(0.12358,0,0,0.121124,-37.3785,-10.4836)">
+                        <rect x="453.631" y="86.553" width="20.715" height="528.383" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                    <g transform="matrix(1.2358,0,0,0.00484497,-541.917,-0.419344)">
+                        <rect x="453.631" y="86.553" width="20.715" height="528.383" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                    <g transform="matrix(0.12358,0,0,0.0242248,-14.3385,-2.09672)">
+                        <rect x="453.631" y="86.553" width="20.715" height="528.383" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                    <g transform="matrix(0.0873846,-0.0873846,0.0171296,0.0171296,-7.70273,39.9679)">
+                        <rect x="453.631" y="86.553" width="20.715" height="528.383" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                    <g transform="matrix(0.0873846,0.0873846,-0.0171296,0.0171296,-10.4254,-41.1229)">
+                        <rect x="453.631" y="86.553" width="20.715" height="528.383" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                    <g transform="matrix(0.0617902,0,0,0.0363373,14.3314,9.65492)">
+                        <rect x="453.631" y="86.553" width="20.715" height="528.383" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                    <g transform="matrix(0.0436923,0.0436923,-0.0128472,0.0128472,23.644,-5.06011)">
+                        <rect x="453.631" y="86.553" width="20.715" height="528.383" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                    <g transform="matrix(0.0436923,-0.0436923,0.0128472,0.0128472,21.8132,35.4853)">
+                        <rect x="453.631" y="86.553" width="20.715" height="528.383" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                    <g transform="matrix(0.056001,-0.0261137,0.0102379,0.0219552,16.0715,41.9099)">
+                        <rect x="453.631" y="86.553" width="20.715" height="528.383" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                    <g transform="matrix(0.056001,0.0261137,-0.0102379,0.0219552,17.8437,17.962)">
+                        <rect x="453.631" y="86.553" width="20.715" height="528.383" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                    <g transform="matrix(0.617902,0,0,0.00968994,-266.738,58.0413)">
+                        <rect x="453.631" y="86.553" width="20.715" height="528.383" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                    <g transform="matrix(0.115878,0,0,0.119395,-42.6213,-34.5257)">
+                        <ellipse cx="738.903" cy="396.378" rx="27.615" ry="26.802" style="fill:rgb(219, 219, 219);"/>
+                    </g>
+                </svg>
+            </div>
+            <!-- Char Ouput Container -->
+            <div>
+
+            </div>
+            <!-- Char List Container -->
+            <div>
+
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</html>

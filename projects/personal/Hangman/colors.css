@@ -1,0 +1,20 @@
+/* Color Theme Swatches in Hex */
+.Rus-1-hex { color: #232526; }
+.Rus-2-hex { color: #353F40; }
+.Rus-3-hex { color: #F2F2F2; }
+.Rus-4-hex { color: #A6A6A6; }
+.Rus-5-hex { color: #0D0D0D; }
+
+/* Color Theme Swatches in RGBA */
+.Rus-1-rgba { color: rgba(35, 36, 38, 1); }
+.Rus-2-rgba { color: rgba(52, 62, 63, 1); }
+.Rus-3-rgba { color: rgba(242, 242, 242, 1); }
+.Rus-4-rgba { color: rgba(165, 165, 165, 1); }
+.Rus-5-rgba { color: rgba(12, 12, 12, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Rus-1-hsla { color: hsla(213, 4, 14, 1); }
+.Rus-2-hsla { color: hsla(185, 9, 22, 1); }
+.Rus-3-hsla { color: hsla(0, 0, 95, 1); }
+.Rus-4-hsla { color: hsla(0, 0, 65, 1); }
+.Rus-5-hsla { color: hsla(0, 0, 5, 1); }
