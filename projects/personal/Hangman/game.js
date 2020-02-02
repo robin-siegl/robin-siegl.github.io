@@ -155,7 +155,7 @@ function checkWin(word) {
     if (counter == word.length) {
         charOutputContainer.classList.add("foundWord");
         GBL_gameState = false;
-        setTimeout(function() {gamePopup("win")},3000);
+        setTimeout(function() {gamePopup("win")},2500);
     }
 }
 
@@ -164,7 +164,7 @@ function checkLose() {
     if (svgContainer.children.length >= templateSvgArray.length * 2) {
         charOutputContainer.classList.add("didntFoundWord");
         GBL_gameState = false;
-        setTimeout(function() {gamePopup("lose")},3000);
+        setTimeout(function() {gamePopup("lose")},2500);
     }
 
 }
