@@ -59,7 +59,7 @@ POPUP CONTAINER
     right: 0;
     bottom: 0;
     z-index: 10;
-    background-color: hsla(0, 0%, 95%, .95);
+    background-color: hsla(0, 0%, 95%, 1);
 }
 #popup-container > div {
     background-color: #353F40;
