@@ -189,7 +189,7 @@ function initGame(difficulty) {
 charListContainer.addEventListener("click", function(event) {
 
     // check if clicked element is P -> Paragraph HTML Element
-    if (event.target.localName.toUpperCase() == "P" && GBL_gameState) {
+    if (event.target.localName.toUpperCase() == "P" && GBL_gameState && !event.target.parentElement.classList.contains("pressed")) {
         checkChar(GBL_randomWord, event.target.innerText);
         checkWin(GBL_randomWord);
         checkWrongTurn();
