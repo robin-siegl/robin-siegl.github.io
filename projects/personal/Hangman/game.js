@@ -194,7 +194,7 @@ function showGraphics(state) {
             svgContainer.classList.add("displayNone");
         }
 
-        svgContainer.parentElement.children[1].classList.remove("displayNone");
+        svgContainer.parentElement.children[1].className = "";
         svgContainer.parentElement.children[1].innerText = "Attempts left: 12";
     }
 
