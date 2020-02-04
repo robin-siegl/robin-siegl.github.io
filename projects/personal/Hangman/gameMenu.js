@@ -1,4 +1,5 @@
 let controlsContainer = document.getElementById("controls-container");
+let optionsContainer = document.getElementById("options-container");
 
 controlsContainer.addEventListener("click", function(event) {
     
@@ -6,6 +7,13 @@ controlsContainer.addEventListener("click", function(event) {
     if (event.target.localName.toUpperCase() == "P" && event.target.innerText.toUpperCase() == "NEW GAME") {
         event.target.parentElement.parentElement.classList.add("displayNone");
         controlsContainer.children[1].classList.remove("displayNone");
+    }
+
+    // Show options
+    if (event.target.localName.toUpperCase() == "P" && event.target.innerText.toUpperCase() == "OPTIONS") {
+        optionsContainer.classList.remove("displayNone");
+        controlsContainer.children[0].classList.add("displayNone");
+        updateOptions();
     }
 
     // Difficulty Buttons

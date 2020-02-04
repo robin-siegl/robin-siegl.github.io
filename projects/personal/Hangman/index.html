@@ -17,6 +17,9 @@
                 <div>
                     <p>New Game</p>
                 </div>
+                <div>
+                    <p>Options</p>
+                </div>
             </div>
             <div class="displayNone">
                 <div class="difficulty">
@@ -71,6 +74,7 @@
                         <ellipse cx="738.903" cy="396.378" rx="27.615" ry="26.802" style="fill:rgb(219, 219, 219);"/>
                     </g>
                 </svg>
+                <p class="displayNone"></p>
             </div>
             <!-- Char Ouput Container -->
             <div>
@@ -89,8 +93,22 @@
             <div>
                 <p>Change Difficulty</p>
             </div>
+            <div>
+                <p>Options</p>
+            </div>
+        </div>
+        <div id="options-container" class="displayNone">
+            <h2>Options</h2>
+            <form>
+                <input type="checkbox" name="showGraphic" checked>
+                <label for="showGraphic">Show Hangman Graphic</label>
+            </form>
+            <div>
+                <p>Back</p>
+            </div>
         </div>
     </main>
     <script src="gameMenu.js"></script>
+    <script src="options.js"></script>
     <script src="game.js"></script>
 </html>

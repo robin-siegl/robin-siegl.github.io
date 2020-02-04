@@ -31,10 +31,35 @@ main {
 }
 
 /*
+OPTIONS CONTAINER
+*/
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+#options-container > form {
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#options-container > form > * {
+   font-size: 1.25em;
+   margin: .25em;
+}
+
+/*
 POPUP CONTAINER
 */
 
-#popup-container h2 {
+#popup-container h2,
+#options-container h2 {
     font-size: 3em;
     text-align: center;
     padding: 0 0 1em 0;
@@ -59,9 +84,10 @@ POPUP CONTAINER
     right: 0;
     bottom: 0;
     z-index: 10;
-    background-color: hsla(0, 0%, 95%, 1);
+    background-color: hsl(0, 0%, 95%);
 }
-#popup-container > div {
+#popup-container > div,
+#options-container > div {
     background-color: #353F40;
     color: #F2F2F2;
     min-width: 50%;
@@ -83,7 +109,8 @@ CONTROLS CONTAINER
     align-items: center;
 }
 #controls-container > div > div,
-#popup-container > div {
+#popup-container > div,
+#options-container > div {
     font-size: 1.125em;
     width: 30%;
     text-align: center;
@@ -104,12 +131,13 @@ CONTROLS CONTAINER
     width: 50%;
 }
 #controls-container > div > div > p,
-#popup-container > div > p {
+#popup-container > div > p,
+#options-container > div > p {
     padding: 1em;
     margin: 0;
 }
 
-div.displayNone {
+.displayNone {
     display: none !important;
 }
 
@@ -133,6 +161,22 @@ GAME CONTAINER
 #game-container > div:first-child {
     padding: 0em;
 }
+#game-container > div:first-child > p {
+    text-align: center;
+    color: #F2F2F2;
+    padding: .5em;
+    display: block;
+    margin: 1em;
+    background-color: #353F40;
+    border-radius: .5em;
+    transition: background-color .2s ease-in-out;
+}
+#game-container > div:first-child > p.warning {
+    background-color: #F2A20C;
+}
+#game-container > div:first-child > p.attention {
+    background-color: #D92B2B;
+}
 #game-container > div:last-child {
     background-color: hsl(0, 0%, 85%);
     width: 100%;
@@ -151,13 +195,15 @@ GAME CONTAINER
     margin: .5em;
     transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color .2s ease-in-out, box-shadow .2s ease-in-out;
 }
-#game-container > div:nth-child(3) > div {
+#game-container > div:nth-child(3) > div,
+#game-container > div:first-child > p {
     box-shadow: 0 0 .4em 0 hsl(0, 0%, 65%),
                 0 0 .6em 0 hsl(0, 0%, 85%);
 }
 #game-container > div:nth-child(3) > div:hover,
 #controls-container > div > div:hover,
-#popup-container > div:hover {
+#popup-container > div:hover,
+#options-container > div:hover {
     opacity: .9;
     cursor: pointer;
     transform: scale(1.05);
@@ -166,7 +212,8 @@ GAME CONTAINER
 }
 #game-container > div:nth-child(3) > div:active,
 #controls-container > div > div:active,
-#popup-container > div:active {
+#popup-container > div:active,
+#options-container > div:active {
     transform: scale(.95);
     box-shadow: 0 0 .2em 0 hsl(0, 0%, 60%),
                 0 0 .4em 0 hsl(0, 0%, 75%);
@@ -191,6 +238,7 @@ GAME CONTAINER
 #game-container > div:nth-child(2) > div.charFound,
 #game-container > div:nth-child(3) > div,
 #controls-container > div > div,
+#popup-container > div:nth-child(3),
 #popup-container > div:last-child {
     background-color: #A6A6A6;
     color: #232526;

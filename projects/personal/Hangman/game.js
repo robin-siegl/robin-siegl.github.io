@@ -98,10 +98,20 @@ function checkChar(word, char) {
 
 function checkWrongTurn() {
 
-    if (GBL_wrongTurns == 1 && GBL_wrongTurn) {
+    if (GBL_wrongTurns == 1 && GBL_wrongTurn && GBL_showGraphicsOption) {
         svgContainer.innerHTML += templateSvgArray[GBL_wrongTurns - 1];
-    } else if (GBL_wrongTurn) {
+    } else if (GBL_wrongTurn && GBL_showGraphicsOption) {
         svgContainer.innerHTML += templateSvgArray[GBL_wrongTurns - 1];
+    }
+
+    if (!GBL_showGraphicsOption) {
+        svgContainer.parentElement.children[1].innerText = "Attempts left: " + (12 - GBL_wrongTurns);
+
+        if ((12 - GBL_wrongTurns) <= 1) {
+            svgContainer.parentElement.children[1].className = "attention";
+        } else if ((12 - GBL_wrongTurns) <= 5) {
+            svgContainer.parentElement.children[1].className = "warning";
+        }
     }
 
     GBL_wrongTurn = false;
@@ -155,16 +165,37 @@ function checkWin(word) {
     if (counter == word.length) {
         charOutputContainer.classList.add("foundWord");
         GBL_gameState = false;
-        setTimeout(function() {gamePopup("win")},2500);
+        setTimeout(function() {gamePopup("win")},3000);
     }
 }
 
 function checkLose() {
 
-    if (svgContainer.children.length >= templateSvgArray.length * 2) {
+    // svgContainer.children.length >= templateSvgArray.length * 2
+    if (GBL_wrongTurns == 12) {
         charOutputContainer.classList.add("didntFoundWord");
         GBL_gameState = false;
-        setTimeout(function() {gamePopup("lose")},2500);
+        setTimeout(function() {gamePopup("lose")},3000);
+    }
+
+}
+
+function showGraphics(state) {
+
+    if (state) {
+        if (svgContainer.classList == "displayNone") {
+            svgContainer.classList.remove("displayNone");
+        }
+
+        svgContainer.parentElement.children[1].classList.add("displayNone");
+        resetSVG();
+    } else if (!state) {
+        if (svgContainer.classList != "displayNone") {
+            svgContainer.classList.add("displayNone");
+        }
+
+        svgContainer.parentElement.children[1].classList.remove("displayNone");
+        svgContainer.parentElement.children[1].innerText = "Attempts left: 12";
     }
 
 }
@@ -179,7 +210,9 @@ function initGame(difficulty) {
     charListContainer.innerHTML = "";
     charOutputContainer.classList.remove("foundWord");
     charOutputContainer.classList.remove("didntFoundWord");
-    resetSVG();
+
+    updateOptions();
+    showGraphics(GBL_showGraphicsOption);
     gamePopup("remove");
     initCharOutput(GBL_randomWord);
     initAlphabeticalCharList();
@@ -210,5 +243,12 @@ popupContainer.addEventListener("click", function(event) {
         event.target.parentElement.parentElement.parentElement.children[1].classList.add("displayNone");
         event.target.parentElement.parentElement.classList.add("displayNone");
         controlsContainer.children[1].classList.remove("displayNone");
+    }
+
+    // open settings
+    if (event.target.localName.toUpperCase() == "P" && event.target.innerText.toUpperCase() == "OPTIONS") {
+        event.target.parentElement.parentElement.parentElement.children[1].classList.add("displayNone");
+        event.target.parentElement.parentElement.classList.add("displayNone");
+        optionsContainer.classList.remove("displayNone");
     }
 });
