@@ -24,6 +24,12 @@ h1 {
     letter-spacing: .2em;
     text-shadow: 0 0 .1em #F2F2F2;
 }
+h1.countdownEnd {
+    color: #F2F2F2;
+    animation-name: animateHeadline;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
 div > div {
     text-align: center;
     padding: 2em;
@@ -73,4 +79,43 @@ div > p {
         font-size: 2em;
     }
 
+}
+
+@keyframes animateHeadline {
+    0% {
+        text-shadow: 0 0 .2em hsl(0, 0%, 60%);
+        transform: scale(1);
+    }
+    10% {
+        text-shadow: 0 0 .2em hsl(0, 50%, 60%);
+    }
+    20% {
+        text-shadow: 0 0 .2em hsl(45, 50%, 60%);
+    }
+    30% {
+        text-shadow: 0 0 .2em hsl(90, 50%, 60%);
+    }
+    40% {
+        text-shadow: 0 0 .2em hsl(135, 50%, 60%);
+    }
+    50% {
+        text-shadow: 0 0 .2em hsl(170, 50%, 60%);
+        transform: scale(1.2);
+    }
+    60% {
+        text-shadow: 0 0 .2em hsl(215, 50%, 60%);
+    }
+    70% {
+        text-shadow: 0 0 .2em hsl(260, 50%, 60%);
+    }
+    80% {
+        text-shadow: 0 0 .2em hsl(305, 50%, 60%);
+    }
+    90% {
+        text-shadow: 0 0 .2em hsl(350, 50%, 60%);
+    }
+    100% {
+        text-shadow: 0 0 .2em hsl(0, 0%, 60%);
+        transform: scale(1);
+    }
 }
