@@ -1,4 +1,4 @@
-let endDate = new Date(2020,1,6,0,0,0);
+let endDate = new Date(2020,1,11,0,0,0);
 let outputContainer = document.getElementById("countdownOutput");
 
 function calculateTimeRemaining(start, end) {
