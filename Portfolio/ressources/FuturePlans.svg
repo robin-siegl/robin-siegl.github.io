@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 800 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.00056,0,0,0.682032,-14.7921,-2.54389)">
+        <rect x="14.784" y="47.716" width="289.839" height="29.324" style="fill:rgb(224,224,224);"/>
+    </g>
+    <g transform="matrix(0.862548,0,0,0.682032,-22.7518,-2.54389)">
+        <path d="M304.623,62.032L293.303,47.716L26.104,47.716L14.784,62.032L14.784,62.725L26.104,77.04L293.303,77.04L304.623,62.725L304.623,62.032Z" style="fill:rgb(66,66,66);"/>
+    </g>
+    <g transform="matrix(0.966054,0,0,0.682032,335.718,-2.54389)">
+        <rect x="14.784" y="47.716" width="289.839" height="29.324" style="fill:rgb(224,224,224);"/>
+    </g>
+    <g transform="matrix(0.138008,0,0,1.36406,297.96,-45.0878)">
+        <rect x="14.784" y="47.716" width="289.839" height="29.324" style="fill:rgb(224,224,224);"/>
+    </g>
+    <g transform="matrix(0.138008,0,0,1.36406,637.96,-45.0878)">
+        <rect x="14.784" y="47.716" width="289.839" height="29.324" style="fill:rgb(224,224,224);"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-16.5226,-3.49511)">
+        <text x="258.413px" y="109.532px" style="font-family:'Raleway-Bold', 'Raleway', sans-serif;font-weight:700;font-size:35.667px;">F<tspan x="277.494px 290.37px 311.984px 333.348px 346.581px " y="109.532px 109.532px 109.532px 109.532px 109.532px ">ronte</tspan>nd</text>
+        <text x="246.75px" y="145.198px" style="font-family:'Raleway-Bold', 'Raleway', sans-serif;font-weight:700;font-size:35.667px;">De<tspan x="293.152px 312.091px " y="145.198px 145.198px ">ve</tspan>loper</text>
+    </g>
+    <g transform="matrix(1,0,0,1,323.477,-3.49511)">
+        <text x="260.606px" y="109.532px" style="font-family:'Raleway-Bold', 'Raleway', sans-serif;font-weight:700;font-size:35.667px;">Back<tspan x="344.387px " y="109.532px ">e</tspan>nd</text>
+        <text x="246.75px" y="145.198px" style="font-family:'Raleway-Bold', 'Raleway', sans-serif;font-weight:700;font-size:35.667px;">De<tspan x="293.152px 312.091px " y="145.198px 145.198px ">ve</tspan>loper</text>
+    </g>
+    <g transform="matrix(0.138008,0,0,0.682032,687.96,-2.54389)">
+        <rect x="14.784" y="47.716" width="289.839" height="29.324" style="fill:rgb(224,224,224);"/>
+    </g>
+    <g transform="matrix(0.0690038,0,0,0.682032,738.98,-2.54389)">
+        <rect x="14.784" y="47.716" width="289.839" height="29.324" style="fill:rgb(224,224,224);"/>
+    </g>
+    <g transform="matrix(0.0690038,0,0,0.682032,768.98,-2.54389)">
+        <rect x="14.784" y="47.716" width="289.839" height="29.324" style="fill:rgb(224,224,224);"/>
+    </g>
+</svg>

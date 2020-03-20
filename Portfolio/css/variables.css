@@ -1,0 +1,25 @@
+:root {
+	--color-main: #9B2D38;
+	--color-main-darker: #5F1C22;
+	--color-comp: #009687;
+	--color-comp-darker: #00524A;
+    
+	--color-headline-light: #E0E0E0;
+	--color-headline-dark: #424242;
+	--color-text-light: #F5F5F5;
+	--color-text-dark: #212121;
+	--color-background-light: #F5F5F5;
+	--color-background-dark: #212121;
+	--color-background-white: #FFF;
+	--color-background-black: #000;
+	
+	--color-a: var(--color-main);
+	--color-a-hover: var(--color-main);
+	
+	--width-smartphone: 30rem;
+	--width-tablet: 48rem;
+    --width-notebook: 64rem;
+    
+    --font-family-headline: "Raleway",Arial,Verdana,sans-serif;
+    --font-family-text: "Lato",Arial,Verdana,sans-serif;
+}
