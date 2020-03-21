@@ -38,6 +38,9 @@
     footer {
         font-size: .8em;
     }
+    footer > div > nav > ul > li > a {
+        padding-bottom: 1.5em;
+    }
 }
 
 /* Tablet */
@@ -68,7 +71,11 @@
     }
     footer > div > nav > ul > li {
         width: 100%;
-        margin: 1em;
+        margin: .5em 0;
+    }
+    footer > div > nav > ul > li:first-of-type {
+        width: 100%;
+        margin: 1em 0 .5em 0;
     }
 }
 
