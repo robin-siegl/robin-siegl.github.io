@@ -1,25 +1,63 @@
-:root {
-	--color-main: #9B2D38;
-	--color-main-darker: #5F1C22;
-	--color-comp: #009687;
-	--color-comp-darker: #00524A;
-    
-	--color-headline-light: #E0E0E0;
-	--color-headline-dark: #424242;
-	--color-text-light: #F5F5F5;
-	--color-text-dark: #212121;
-	--color-background-light: #F5F5F5;
-	--color-background-dark: #212121;
-	--color-background-white: #FFF;
-	--color-background-black: #000;
-	
-	--color-a: var(--color-main);
-	--color-a-hover: var(--color-main);
-	
-	--width-smartphone: 30rem;
-	--width-tablet: 48rem;
-    --width-notebook: 64rem;
-    
-    --font-family-headline: "Raleway",Arial,Verdana,sans-serif;
-    --font-family-text: "Lato",Arial,Verdana,sans-serif;
+/* LIGHT MODE */
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+	:root {
+		--color-main: #9B2D38;
+		--color-main-darker: #5F1C22;
+		--color-comp: #009687;
+		--color-comp-darker: #00524A;
+		
+		--color-headline-light: #E0E0E0;
+		--color-headline: #E0E0E0;
+		--color-headline-dark: #424242;
+		--color-text-light: #F5F5F5;
+		--color-text-dark: #212121;
+		--color-background-light: #F5F5F5;
+		--color-background-dark: #212121;
+		--color-background-white: #FFF;
+		--color-background-black: #000;
+		--color-shadow-1: #E0E0E0;
+		--color-shadow-2: #BDBDBD;
+		--color-accept-button: #009687;
+		--color-accept-button-hover: #00524A;
+		--color-transparent-img: transparent;
+		
+		--width-smartphone: 30rem;
+		--width-tablet: 48rem;
+		--width-notebook: 64rem;
+		
+		--font-family-headline: "Raleway",Arial,Verdana,sans-serif;
+		--font-family-text: "Lato",Arial,Verdana,sans-serif;
+	}
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-main: #9B2D38;
+		--color-main-darker: #5F1C22;
+		--color-comp: #00524A;
+		--color-comp-darker: #009687;
+		
+		--color-headline-light: #424242;
+		--color-headline: #E0E0E0;
+		--color-headline-dark: #E0E0E0;
+		--color-text-light: #212121;
+		--color-text-dark: #F5F5F5;
+		--color-background-light: #212121;
+		--color-background-dark: #F5F5F5;
+		--color-background-white: #000;
+		--color-background-black: #FFF;
+		--color-shadow-1: #333333;
+		--color-shadow-2: #1f1f1f;
+		--color-accept-button: #009687;
+		--color-accept-button-hover: #00524A;
+		--color-transparent-img: #BDBDBD;
+		
+		--width-smartphone: 30rem;
+		--width-tablet: 48rem;
+		--width-notebook: 64rem;
+		
+		--font-family-headline: "Raleway",Arial,Verdana,sans-serif;
+		--font-family-text: "Lato",Arial,Verdana,sans-serif;
+	}
 }

@@ -43,13 +43,14 @@ nav > ul > li > a.active:hover {
 	z-index: 15;
 	padding: .5em;
 	font-size: 1.5em;
+	color: var(--color-headline-dark);
 	background-color: var(--color-background-light);
 	border: 2px solid var(--color-headline-dark);
 	transition: color .2s ease-in-out, background-color .3s ease-in-out, top .3s ease-in-out;
 }
 #mobile-nav-button:hover {
 	cursor: pointer;
-	color: var(--color-text-light);
+	color: var(--color-headline-light);
 	background-color: var(--color-headline-dark);
 }
 header.compact-header #mobile-nav-button {

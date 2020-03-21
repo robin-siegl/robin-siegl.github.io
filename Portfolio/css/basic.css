@@ -5,8 +5,8 @@ body {
 	font-family: var(--font-family-text);
 	line-height: 1.5em;
 	
-	color: var(--color-text);
-	background-color: var(--color-background-shiny);
+	color: var(--color-text-dark);
+	background-color: var(--color-background-white);
 }
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
 	font-size: 2.3rem;
-	color: var(--color-headline-dark);
+	color: var(--color-headline);
 }
 h2 {
 	font-size: 2rem;
@@ -28,7 +28,7 @@ h2 {
 h3 {
 	font-size: 1.7rem;
 	margin-top: 1em;
-	color: var(--color-comp);
+	color: var(--color-comp-darker);
 }
 h4 {
 	font-size: 1.3rem;
@@ -185,12 +185,12 @@ section.info > div > div {
 section.info > div > div > h1 {
 	padding: 0;
 	margin: 0;
-	color: var(--color-text-light);
 }
 section.info > div > div > div {
 	margin: 0 0 0 .5em;
 	padding: .125em;
-	background-color: var(--color-headline-light);
+	background-color: var(--color-headline);
+	opacity: .7;
 	font-size: 2.5em;
 	color: var(--color-comp);
 	border-radius: 5px;
@@ -241,7 +241,7 @@ section.info > div > div > div:first-of-type {
 	font-size: 1.25em;
 	padding: .75em;
 	font-weight: 700;
-	color: var(--color-text-light);
+	color: var(--color-headline);
 	background-color: var(--color-comp-darker);
 	text-decoration: none;
 	opacity: 1;
@@ -270,8 +270,8 @@ section.info > div > div > div:first-of-type {
 .projects > div {
 	padding: 1em;
 	background-color: var(--color-background-light);
-	box-shadow: 0 0 .2em .1em #E0E0E0,
-				0 0 .4em .1em #BDBDBD;
+	box-shadow: 0 0 .2em .1em var(--color-shadow-1),
+				0 0 .4em .1em var(--color-shadow-1);
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -281,6 +281,7 @@ section.info > div > div > div:first-of-type {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
+	background-color: var(--color-transparent-img);
 }
 .projects > div > h3 {
 	margin: .5em 0;
@@ -322,7 +323,7 @@ button.accept {
 	color: var(--color-text-light);
 	font-weight: 700;
 	text-transform: uppercase;
-	background-color: var(--color-comp);
+	background-color: var(--color-accept-button);
 	border: none;
 	transition: background-color .3s ease-in-out;
 	display: block;
@@ -332,5 +333,5 @@ button.accept {
 a.accept:hover,
 button.accept:hover {
 	cursor: pointer;
-	background-color: var(--color-comp-darker);
+	background-color: var(--color-accept-button-hover);
 }
