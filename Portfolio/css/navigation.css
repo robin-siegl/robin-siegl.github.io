@@ -43,7 +43,6 @@ nav > ul > li > a.active:hover {
 	z-index: 15;
 	padding: .5em;
 	font-size: 1.5em;
-
 	background-color: var(--color-background-light);
 	border: 2px solid var(--color-headline-dark);
 	transition: color .2s ease-in-out, background-color .3s ease-in-out, top .3s ease-in-out;
@@ -88,7 +87,8 @@ header.compact-header #mobile-nav-button {
 		transition: border .3s ease-in-out;
 	}
 	header nav > ul > li > a.active,
-	header nav > ul > li > a:hover {
+	header nav > ul > li > a:hover,
+	header nav > ul > li > a.active:hover {
 		border-left: 10px solid var(--color-comp);
 		background: none;
 		color: var(--color-comp-darker);

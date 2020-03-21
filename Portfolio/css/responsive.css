@@ -23,6 +23,9 @@
     header nav > ul > li > a > i.material-icons {
         padding: 0 .25em 0 0;
     }
+    #sectionIntroduction img {
+        width: 80%;
+    }
     #sectionIntroduction > div:nth-of-type(2) ul {
         flex-direction: column;
         align-items: flex-start;
@@ -53,6 +56,9 @@
     h1 {
         font-size: 1.6em;
     }
+    #sectionIntroduction img {
+        width: 100%;
+    }
     footer > div > nav > ul {
         display: flex;
         flex-direction: column;
@@ -71,6 +77,9 @@
     body {
         font-size: .9em;
     }
+    header nav ul {
+        font-size: 1.25em;
+    }
     header > div > img {
         width: 6em;
     }
@@ -79,7 +88,10 @@
         top: .75em;
     }
     h1 {
-        font-size: 1.4em;
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1rem;
     }
     section.info > div > div {
         flex-direction: column;
@@ -102,9 +114,12 @@
         flex-direction: column;
         align-items: flex-start;
     }
-    #sectionIntroduction li {
+    #sectionIntroduction > div:nth-of-type(3) ul > li {
         margin: .25em 0;
         width: 100%;
         text-align: center;
+    }
+    #sectionIntroduction img {
+        width: 60%;
     }
 }
