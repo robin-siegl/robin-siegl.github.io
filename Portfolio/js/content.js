@@ -29,7 +29,7 @@ $(document).ready(function(){
 		}
 
 		// animate footer when visible
-		if ($("footer").position().top - 100 <= $(window).scrollTop()) {
+		if ($("footer").position().top - 200 <= $(window).scrollTop()) {
 			$("footer").addClass("animate");
 		} else if ($("footer").position().top - $(window).height() >= $(window).scrollTop() && $("footer").hasClass("animate")) {
 			$("footer").removeClass("animate");
