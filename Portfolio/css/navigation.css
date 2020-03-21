@@ -50,8 +50,6 @@ nav > ul > li > a.active:hover {
 }
 #mobile-nav-button:hover {
 	cursor: pointer;
-	color: var(--color-headline-light);
-	background-color: var(--color-headline-dark);
 }
 header.compact-header #mobile-nav-button {
 	top: .75em;
