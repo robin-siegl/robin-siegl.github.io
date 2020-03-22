@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>To Do List</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script src="vue.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link href="basic.css" rel="stylesheet">
+    </head>
+    <body>
+        <main id="app">
+            <section class="flex-col" :class="{ 'display-nav': displayNav }">
+                <div v-if="lists.length > 0">
+                    <h2>Your Lists:</h2>
+                    <ul>
+                        <li v-for="list in lists">{{ list.name }} <button class="material-icons" @click="openList(list.name)">launch</button></li>
+                    </ul>
+                </div>
+                <div v-else>
+                    <h2>Create a new List!</h2>
+                </div>
+            </section>
+            <button class="material-icons normalPosition" id="mobile-nav" @click="toggleSideBar" ref="mobileNavBtn">menu</button>
+            <section id="content" class="flex-col" v-if="!displayNav">
+                <div>
+                    <div v-if="!createListMenu" class="flex-row">
+                        <button class="normalPosition" @click="createListMenu = !createListMenu">Create New List</button>
+                        <button v-if="currentList.name.length > 0" class="normalPosition btn-delete" @click="deleteList">Delete List</button>
+                    </div>
+                    <div v-else class="flex-row">
+                        <h3>New List:</h3>
+                        <input type="text" placeholder="Enter Listname..." @keyup.enter="addList">
+                        <button class="normalPosition material-icons" @click="createListMenu = !createListMenu">close</button>
+                        <p class="errorMessage" v-if="errorMessage">Listname already taken!</p>
+                    </div>
+                </div>
+                <div>
+                    <template v-if="currentList.name.length > 0">
+                        <h2 class="listname">{{ currentList.name }}</h2>
+                        <ul v-if="currentList.items.length > 0">
+                            <li v-for="(item, id) in currentList.items">{{ item }} <button class="material-icons btn-delete" @click.stop.prevent="deleteItem(id)">delete</button></li>
+                        </ul>
+                        <ul v-else>
+                            <li class="emptyList">This List is Empty!</li>
+                        </ul>
+                    </template>
+                    <template v-else>
+                        <h2>Create a list or open an existing one!</h2>
+                    </template>
+                </div>
+                <div id="bottomNav" v-if="currentList.name.length > 0" class="flex-row">
+                    <h3>New Entry: </h3>
+                    <input type="text" placeholder="Enter new Item..." @keyup.enter="addItem">
+                </div>
+            </section>
+        </main>
+
+        <!-- Main JavaScript File -->
+        <script src="app.js"></script>
+    </body>
+</html>
