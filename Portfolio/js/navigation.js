@@ -10,9 +10,13 @@ $(document).ready(function(){
 
             let tempLinkObject = $(this);
 
-            $("#mobile-nav-button").html("menu").next("nav:visible").slideUp(300, function() {
-                $('html, body').animate({scrollTop: $(tempLinkObject.attr('href')).offset().top}, 500);
-            });
+            if ($("#mobile-nav-button").html("menu").next("nav").is(":visible")) {
+              $("#mobile-nav-button").html("menu").next("nav:visible").slideUp(300, function() {
+                  $('html, body').animate({scrollTop: $(tempLinkObject.attr('href')).offset().top}, 500);
+              });
+            } else {
+              $('html, body').animate({scrollTop: $(tempLinkObject.attr('href')).offset().top}, 500);
+            }
 
         } else {
 
