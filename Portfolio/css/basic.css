@@ -220,6 +220,9 @@ section.info > div > div > div:first-of-type {
 	padding: 0;
 	width: 100%;
 }
+#sectionIntroduction div:nth-of-type(2) ul {
+	flex-wrap: wrap;
+}
 #sectionIntroduction div:nth-of-type(2) ul > li {
 	font-size: 1.25em;
 	padding: .75em;
