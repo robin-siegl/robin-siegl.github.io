@@ -227,7 +227,7 @@ section.info > div > div > div:first-of-type {
 	font-size: 1.25em;
 	padding: .75em;
 	font-weight: 700;
-	margin: 0 1em 0 0;
+	margin: .5em;
 	color: var(--color-text-dark);
 	border: 3px solid var(--color-text-dark);
 }
