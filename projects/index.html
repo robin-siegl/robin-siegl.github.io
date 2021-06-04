@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>NM</title>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background: linear-gradient(170deg, #C31432 , #000428 75vh);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+            }
+            header {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                height: 5em;
+                position: fixed;
+                z-index: 10;
+                background-color: rgba(0, 0, 0, 0.55);
+                backdrop-filter: blur(20px) saturate(320%) contrast(45%) brightness(100%);
+                -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+            }
+            header > nav {
+                height: 100%;
+                width: 60rem;
+                margin: 0 auto;
+            }
+            header > nav > ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                list-style-type: none;
+                height: 100%;
+                width: 100%;
+            }
+            header > nav > ul > li {
+                padding: 1em;
+                margin: 0 1em;
+                font-size: 1.25em;
+            }
+            header > nav > ul > li:first-of-type {
+                margin: 0 auto 0 1em;
+            }
+            header > nav > ul > li > img {
+                width: 5em;
+            }
+            section {
+                min-height: 100vh;
+                width: 60rem;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+            section:first-of-type > ul {
+                position: absolute;
+                bottom: 3em;
+                left: 0;
+                right: 0;
+                z-index: 2;
+            }
+            h1, h2, h3, h4, h5, h6, li {
+                color: #f0f0f0;
+                font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+            }
+            h1 {
+                font-size: 6em;
+                text-shadow: 0 0 5px #fff;
+                animation: textShadow;
+                animation-duration: 2s;
+            }
+
+            @keyframes textShadow {
+                0% {
+                    text-shadow: 0 0 0px #fff;
+                }
+                100% {
+                    text-shadow: 0 0 5px #fff;
+                }
+            }
+
+            h2 {
+                font-size: 2.1em;
+            }
+            p {
+                color: #fff;
+                font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                font-size: 1.25em;
+                text-align: justify;
+                padding: .8em 0;
+                max-width: 35rem;
+                width: 100%;
+            }
+            .logo {
+                filter: invert();
+            }
+            #social-banner,
+            footer > ul {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: flex-start;
+                list-style-type: none;
+            }
+            #social-banner > li {
+                padding: .25em;
+                margin: 1em;
+                font-size: 1.5em;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            #social-banner > li:hover,
+            footer li:hover {
+                cursor: pointer;
+            }
+            footer {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 2;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.55);
+                backdrop-filter: blur(20px) saturate(320%) contrast(45%) brightness(100%);
+                -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+            }
+            footer > ul > li {
+                color: #fafafa;
+                font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                margin: 0 1em;
+                padding: 1em;
+                transition: background-color .3s ease-in-out;
+            }
+            footer > ul > li.active {
+                background-color: #C31432;
+                padding: 1em;
+            }
+            footer > ul > li.active.removeclass {
+                background-color: transparent;
+                padding: 1em;
+            }
+
+            #about,
+            #media {
+                display: none;
+            }
+            #about.show,
+            #media.show {
+                min-height: 100vh;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                z-index: 2;
+                opacity: 1;
+                background-color: rgba(0, 0, 0, 0.65);
+                backdrop-filter: blur(20px) saturate(320%) contrast(45%) brightness(100%);
+                -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+                animation: fadeIn;
+                animation-duration: 1s;
+            }
+            #about.show.removeclass,
+            #media.show.removeclass {
+                animation: fadeOut;
+                animation-duration: 1s;
+                opacity: 0;
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes fadeOut {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            a {
+                background-color: #fff;
+                padding: .5em .75em;
+                margin: 1em;
+                font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                text-decoration: none;
+                color: #000428;
+                font-weight: 800;
+            }
+        </style>
+    </head>
+    <body>
+        <!--
+        <header>
+            <nav>
+                <ul>
+                    <li><img class="logo" src="Logo.svg"></li>
+                    <li>About</li>
+                    <li>Social</li>
+                </ul>
+            </nav>
+        </header>
+        -->
+        <main>
+            <section>
+                <!--<img src="1.webp">-->
+                <h1>Noisy Mind</h1>
+                <h2>Drum & Bass DJ</h2>
+                <ul id="social-banner">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <rect x="4" y="4" width="16" height="16" rx="4" />
+                            <circle cx="12" cy="12" r="3" />
+                            <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                        </svg>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                        </svg>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-youtube" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <rect x="3" y="5" width="18" height="14" rx="4" />
+                            <path d="M10 9l5 3l-5 3z" />
+                        </svg>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-mail" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <rect x="3" y="5" width="18" height="14" rx="2" />
+                            <polyline points="3 7 12 13 21 7" />
+                        </svg>
+                    </li>
+                    <!--<li><img src="twitter.png">Twitter</li>-->
+                </ul>
+            </section>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>
+                    I'm a hobby Drum and Bass DJ from Austria.<br>My passion is to DJ and bring people together with my music.
+                </p>
+                <p>
+                    You can find my mashup's and set's on YouTube. I will post a new mashup every week and you should see a new set every month.
+                </p>
+                <p>
+                    Follow me on my official social media accounts to stay up-to-date. 
+                </p>
+            </section>
+            <section id="media">
+                <h2>Media Kit</h2>
+                <p>
+                    Download the official Logo. Only this logos are allowed to use.<br>
+                    This kit contains different sizes for the Logo with different backgrounds. There's also a transparent background, please use the correct background color to achiev an ideal contrast. 
+                </p>
+                <a href="">Download Media Kit</a>
+            </section>
+        </main>
+        <footer>
+            <ul>
+                <li id="about-button" onclick="showWindow('about')">About Me</li>
+                <li id="media-button" onclick="showWindow('media')">Media Kit</li>
+            </ul>
+        </footer>
+
+        <script>
+            var lastTabname = "about";
+            function showWindow(tabname) {
+                if (lastTabname != tabname && document.getElementById(lastTabname + "-button").classList.contains("active")) {
+                    document.getElementById(lastTabname).classList.add("removeclass");
+                    document.getElementById(lastTabname + "-button").classList.add("removeclass");
+
+                    let dummy = lastTabname;
+
+                    setTimeout(() => {
+                        document.getElementById(dummy).classList.remove("show");
+                        document.getElementById(dummy + "-button").classList.remove("active");
+                        document.getElementById(dummy).classList.remove("removeclass");
+                        document.getElementById(dummy + "-button").classList.remove("removeclass");
+                    }, 1000);
+
+                    document.getElementById(tabname).classList.add("show");
+                    document.getElementById(tabname + "-button").classList.add("active");
+                } else if (lastTabname == tabname && document.getElementById(lastTabname + "-button").classList.contains("active")) {
+                    document.getElementById(tabname).classList.add("removeclass");
+                    document.getElementById(tabname + "-button").classList.add("removeclass");
+
+                    setTimeout(() => {
+                        document.getElementById(tabname).classList.remove("show");
+                        document.getElementById(tabname + "-button").classList.remove("active");
+                        document.getElementById(tabname).classList.remove("removeclass");
+                        document.getElementById(tabname + "-button").classList.remove("removeclass");
+                    }, 1000);
+                } else {
+                    document.getElementById(tabname).classList.add("show");
+                    document.getElementById(tabname + "-button").classList.add("active");
+                }
+                lastTabname = tabname;
+            }
+        </script>
+    </body>
+</html>
