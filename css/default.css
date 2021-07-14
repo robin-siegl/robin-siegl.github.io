@@ -112,15 +112,12 @@ header {
 
 @keyframes blink {
     0% {
-        opacity: 1;
-    }
-    30% {
         opacity: .25;
     }
-    60% {
+    40% {
         opacity: 1;
     }
-    90% {
+    80% {
         opacity: .25;
     }
     100% {
