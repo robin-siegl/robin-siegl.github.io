@@ -25,6 +25,10 @@
     body {
         max-width: 30rem;
     }
+    .business-card {
+        max-width: 30rem;
+        height: 20rem;
+    }
     p {
         font-size: 1rem;
     }
@@ -72,6 +76,10 @@
     .business-card {
         flex-direction: column;
         align-items: center;
+        max-width: 100%;
+    }
+    .business-card.back {
+        height: auto;
     }
     .business-card > ul {
         margin-right: 0;
