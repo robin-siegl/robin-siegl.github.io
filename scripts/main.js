@@ -1,6 +1,6 @@
 document.addEventListener("scroll", event => {
     // Show or hide prfile pic in navbar
-    if (document.documentElement.clientHeight > document.documentElement.scrollTop) {
+    if (document.documentElement.clientHeight / 1.25 > document.documentElement.scrollTop) {
         document.getElementById("profile-pic").classList.remove("show");
         document.getElementById("profile-pic").classList.add("hide");
     } else {
