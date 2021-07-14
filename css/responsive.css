@@ -2,8 +2,8 @@
     body {
         width: 42rem;
     }
-    nav {
-        padding: .75em;
+    nav > .container {
+        padding: .5em 1em;
     }
     main ul.projects {
         max-width: 100%;
