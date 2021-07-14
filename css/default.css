@@ -160,7 +160,6 @@ ul.skills > li > img + p {
     text-align: center;
     font-weight: 600;
     padding: .25em .75em;
-    border-top: 2px solid var(--background-color-btn-default-hover);
 }
 main ul.skills {
     display: flex;
