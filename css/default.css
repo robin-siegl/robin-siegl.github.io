@@ -141,9 +141,9 @@ main ul.projects > li {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     margin: 2em 0;
-    padding: 1em 0;
+    padding: 2em 0;
     background-color: var(--background-color);
     -webkit-box-shadow: 0 3px 10px var(--color-shadow);
     -moz-box-shadow: 0 3px 10px var(--color-shadow);
@@ -152,9 +152,19 @@ main ul.projects > li {
 main ul.projects > li > img {
     height: 10em;
 }
-main ul.projects > li > div,
-main ul.projects > li > ul {
+main ul.projects > li > div {
     margin: 0 2em;
+}
+main ul.projects > li > ul {
+    margin: 0 2em 0 auto;
+    list-style-type: none;
+}
+main ul.projects > li > ul > li {
+    background-color: var(--background-color-btn-default-hover);
+    color: var(--background-color);
+    margin-bottom: .575em;
+    padding: .5em;
+    font-weight: 600;
 }
 main ul.projects > li > div:last-child {
     margin-left: auto;
@@ -162,6 +172,7 @@ main ul.projects > li > div:last-child {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: -1em 2em;
 }
 main ul.projects > li > div:last-child > a,
 section a.btn {
