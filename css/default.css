@@ -22,11 +22,11 @@ html {
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
     background: var(--background-url);
+    scroll-behavior: smooth;
 }
 body {
     width: 64rem;
     margin: 0 auto;
-    scroll-behavior: smooth;
 }
 
 /*
@@ -39,6 +39,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    position: relative;
 }
 .business-card {
     background-color: var(--background-color);
@@ -83,6 +84,48 @@ header {
 }
 .business-card > img {
     height: 17em;
+}
+
+#scroll-to-info.show {
+    opacity: .5;
+}
+#scroll-to-info {
+    text-decoration: none;
+    position: absolute;
+    bottom: 1em;
+    left: calc(50% - (3.5em / 2));
+    z-index: 3;
+    animation: blink 4s;
+    transition: opacity .3s ease-in-out;
+}
+#scroll-to-info.show:hover {
+    opacity: 1;
+}
+#scroll-to-info.hide {
+    opacity: 0;
+}
+#scroll-to-info > img {
+    height: 3.5em;
+    width: 3.5em;
+}
+
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    30% {
+        opacity: .25;
+    }
+    60% {
+        opacity: 1;
+    }
+    90% {
+        opacity: .25;
+    }
+    100% {
+        opacity: .5;
+    }
 }
 
 /*
