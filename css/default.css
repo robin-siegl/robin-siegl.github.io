@@ -1,0 +1,194 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat, sans-serif;
+    color: var(--color-headline);
+    font-weight: 600;
+}
+h2 {
+    padding-left: .5em;
+    border-left: 5px solid var(--color-headline);
+    margin-bottom: 1.5em;
+}
+p, li, a {
+    font-family: "Open Sans", sans-serif;
+    color: var(--color-text);
+}
+p {
+    padding: .8em 0;
+    line-height: 1.5em;
+    font-size: 1.125rem;
+}
+html {
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+    background: var(--background-url);
+}
+body {
+    width: 64rem;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+}
+
+/*
+HEADER
+*/
+header {
+    min-height: 100vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+.business-card {
+    background-color: var(--background-color);
+    -webkit-box-shadow: 0 3px 10px var(--color-shadow);
+    -moz-box-shadow: 0 3px 10px var(--color-shadow);
+    box-shadow: 0 3px 10px var(--color-shadow);
+    border-left: 5px solid var(--color-headline);
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+.business-card > ul {
+    list-style: none;
+    margin-right: 1em;
+}
+.business-card > ul > li {
+    margin: .4em;
+    font-size: 1.125rem;
+}
+.business-card span {
+    font-weight: 600;
+    color: var(--color-text);
+}
+.business-card > ul > li:last-child {
+    margin-bottom: -.125em;
+    font-size: 1.125rem;
+}
+.business-card > img {
+    height: 17em;
+}
+
+/*
+MAIN
+*/
+section a {
+    color: var(--color-link);
+    font-weight: 600;
+    transition: color .2s ease-in-out;
+}
+section a:hover {
+    color: var(--color-link-hover);
+}
+section {
+    min-height: 100vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+ul.skills > li > img {
+    height: 4em;
+    width: 4em;
+    margin: .75em .75em 1.25em .75em;
+    filter: var(--filter-img);
+}
+ul.skills > li > img + p {
+    background-color: var(--color-text);
+    width: 100%;
+    color: var(--background-color);
+    text-align: center;
+    font-weight: 700;
+    padding: .25em .75em;
+}
+main ul.skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    list-style-type: none;
+}
+main ul.skills > li {
+    width: 7em;
+    height: 9em;
+    margin: 2em 2em 0 0;
+    background-color: var(--background-color);
+    -webkit-box-shadow: 0 3px 10px var(--color-shadow);
+    -moz-box-shadow: 0 3px 10px var(--color-shadow);
+    box-shadow: 0 3px 10px var(--color-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+main ul.projects {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 64rem;
+}
+main ul.projects > li {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2em 0;
+    padding: 1em 0;
+    background-color: var(--background-color);
+    -webkit-box-shadow: 0 3px 10px var(--color-shadow);
+    -moz-box-shadow: 0 3px 10px var(--color-shadow);
+    box-shadow: 0 3px 10px var(--color-shadow);
+}
+main ul.projects > li > img {
+    height: 10em;
+}
+main ul.projects > li > div,
+main ul.projects > li > ul {
+    margin: 0 2em;
+}
+main ul.projects > li > div:last-child {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main ul.projects > li > div:last-child > a,
+section a.btn {
+    background-color: var(--background-color-btn-cta);
+    color: var(--color-btn-cta);
+    border: 2px solid var(--background-color-btn-cta);
+    padding: .75em;
+    margin: 1em 0;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    transition: border .3s ease-in-out, background-color .3s ease-in-out;
+}
+section a.btn {
+    width: auto;
+}
+main ul.projects > li > div:last-child > a:last-child {
+    background-color: var(--background-color-btn-default);
+    color: var(--color-btn-default);
+    border: 2px solid var(--color-btn-default);
+}
+main ul.projects > li > div:last-child > a:hover,
+section a.btn:hover {
+    background-color: var(--background-color-btn-cta-hover);
+    border: 2px solid var(--background-color-btn-cta-hover);
+}
+main ul.projects > li > div:last-child > a:last-child:hover {
+    background-color: var(--background-color-btn-default-hover);
+    border: 2px solid var(--background-color-btn-default-hover);
+}

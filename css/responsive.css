@@ -1,0 +1,89 @@
+@media screen and (max-width: 68rem) {
+    body {
+        width: 42rem;
+    }
+    nav {
+        padding: .75em;
+    }
+    main ul.projects {
+        max-width: 100%;
+    }
+    main ul.projects > li > ul {
+        margin-left: auto;
+    }
+    main ul.projects > li > div:last-child {
+        width: 100%;
+        margin: 0 2em;
+        flex-direction: row;
+    }
+    main ul.projects > li > div:last-child > a:first-child {
+        margin-right: 2em;
+    }
+}
+
+@media screen and (max-width: 45rem) {
+    body {
+        max-width: 30rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    main ul.projects {
+        max-width: 100%;
+    }
+    main ul.projects > li {
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 2em;
+    }
+    main ul.projects > li > div {
+        margin-left: 0;
+    }
+    main ul.projects > li > ul {
+        margin: 2em 0 2em 2em;
+    }
+    main ul.projects > li > div:last-child {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main ul.projects > li > div:last-child > a:first-child {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 34rem) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    body {
+        max-width: 100%;
+        padding: 0 1em;
+    }
+    header {
+        width: 100%;
+        align-items: center;
+    }
+    .business-card {
+        flex-direction: column;
+        align-items: center;
+    }
+    .business-card > ul {
+        margin-right: 0;
+    }
+    .business-card > ul > li {
+        font-size: 1rem;
+    }
+    .business-card > ul > li:last-child {
+        margin-bottom: 2em;
+        font-size: 1rem;
+    }
+    .business-card > img {
+        height: 10em;
+    }
+}

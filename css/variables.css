@@ -1,0 +1,49 @@
+:root {
+    --background-url: url("../ressources/dot-grid.png");
+
+    --color-headline: #424242;
+    --color-text: #212121;
+
+    --background-color: #fefefe;
+    --background-color-shade: rgba(255, 255, 255, 0.5);
+
+    --background-color-btn-cta: #212121;
+    --background-color-btn-cta-hover: #424242;
+    --color-btn-cta: #fefefe;
+    --background-color-btn-default: #fefefe;
+    --background-color-btn-default-hover: #CCC;
+    --color-btn-default: #212121;
+
+    --color-link: dodgerblue;
+    --color-link-hover: #0c71d6;
+
+    --color-shadow: rgb(0, 0, 0, 0.2);
+
+    --filter-img: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-url: url("../ressources/dot-grid-dark.png");
+    
+        --color-headline: #ccc;
+        --color-text: #fefefe;
+    
+        --background-color: #212121;
+        --background-color-shade: rgba(0, 0, 0, 0.5);
+    
+        --background-color-btn-cta: #fefefe;
+        --background-color-btn-cta-hover: #ccc;
+        --color-btn-cta: #212121;
+        --background-color-btn-default: #212121;
+        --background-color-btn-default-hover: #424242;
+        --color-btn-default: #fefefe;
+    
+        --color-link: #67b3ff;
+        --color-link-hover: #3c9eff;
+    
+        --color-shadow: rgb(200, 200, 200, 0.2);
+
+        --filter-img: invert();
+    }
+}

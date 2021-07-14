@@ -1,0 +1,15 @@
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 100vw;
+    z-index: 5;
+    padding: .75em 0;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: var(--background-color-shade);
+}
+nav > .container {
+    max-width: 64rem;
+    margin: 0 auto;
+}
