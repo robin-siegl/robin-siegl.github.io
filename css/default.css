@@ -114,12 +114,13 @@ ul.skills > li > img {
     filter: var(--filter-img);
 }
 ul.skills > li > img + p {
-    background-color: var(--color-text);
+    background-color: var(--background-color-darker);
     width: 100%;
-    color: var(--background-color);
+    color: var(--color-text);
     text-align: center;
-    font-weight: 700;
+    font-weight: 600;
     padding: .25em .75em;
+    border-top: 2px solid var(--background-color-btn-default-hover);
 }
 main ul.skills {
     display: flex;
