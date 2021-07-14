@@ -5,6 +5,7 @@
     --color-text: #212121;
 
     --background-color: #fefefe;
+    --background-color-darker: #eee;
     --background-color-shade: rgba(255, 255, 255, 0.5);
 
     --background-color-btn-cta: #212121;
@@ -22,8 +23,7 @@
     --filter-img: none;
 }
 
-/*
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --background-url: url("../ressources/dot-grid-dark.png");
     
@@ -47,5 +47,4 @@
 
         --filter-img: invert();
     }
-}
-*/
+} */
