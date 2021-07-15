@@ -46,7 +46,16 @@
         margin-left: 0;
     }
     main ul.projects > li > ul {
-        margin: 2em 0 2em 2em;
+        margin: 2em 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+    }
+    main ul.projects > li > ul > li {
+        margin: 0 1em 1em 0;
     }
     main ul.projects > li > div:last-child {
         width: 100%;
