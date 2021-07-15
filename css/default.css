@@ -61,9 +61,6 @@ header {
 }
 .business-card > ul {
     list-style: none;
-    margin-right: 1em;
-}
-.business-card.back > ul {
     margin: 1em auto 0 0;
 }
 .business-card.back > ul a {
